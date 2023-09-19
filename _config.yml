@@ -1,1 +1,10 @@
+title:   Yvonne Li
+logo: "Users/lyonnce/Pictures/yli.png" # your photo (or logo) here
+description: > # your text below (remove <br> elements if you don't need line breaks)
+  My name is Yvonne, I have over 5 years of data analytics experience in financial industry, telecom and retail.
+  <br><br>
+  <a href="https://www.linkedin.com/in/yvonneli-yli/">View My LinkedIn Profile</a>
+  <br><br>
+ 
+ 
 theme: jekyll-theme-minimal

@@ -1,4 +1,4 @@
----
+----
 layout: default
 title: Blog
 show_title: false
@@ -8,7 +8,9 @@ show_title: false
         <li>
             <span>{{ post.date | date_to_string }}</span> » 
             <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-            <p>{{ post.excerpt }}</p>
+            {% if post.custom_excerpt %}
+                <p>{{ post.custom_excerpt }}</p>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>

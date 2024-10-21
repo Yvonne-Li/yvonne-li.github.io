@@ -1,3 +1,8 @@
+---
+layout: post
+title: "conda vs venv"
+date: 2024-10-20
+---
 # conda vs venv
 
 conda needs a environment.yaml file to determine the packages needed

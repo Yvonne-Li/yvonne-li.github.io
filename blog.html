@@ -1,10 +1,13 @@
+---
+layout: default
+title: Blog
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yvonne Li</title>
-    <!-- link to main stylesheet -->
+    <title>{{ page.title }}</title>
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 </head>
 <body>
@@ -14,16 +17,21 @@
             <li><a href="/about">About</a></li>
             <li><a href="/cv">CV</a></li>
             <li><a href="/blog">Blog</a></li>
-            <li><a href="mailto:yvonneli.dev@gmail.com">Email</a></li>
+            <li><a href="mailto:yvonneli.annalyst@gmail.com">Email</a></li>
             <li><a href="https://github.com/yvonne-li">Github</a></li>
         </ul>
     </nav>
     <div class="container">
-        <div class="blurb">
-            <img src="/image/yli.png" alt="Yvonne Li" width="120" height="120">
-            <h1>Hi there, I'm Yvonne Li!</h1>
-            <p>Welcome to my personal website. I'm a data analyst with over 5 years of experience in the financial industry, telecom, and retail sectors.</p>
-        </div><!-- /.blurb -->
-    </div><!-- /.container -->
+        <h1>My Blog</h1>
+        <ul class="posts">
+            {% for post in site.posts %}
+                <li>
+                    <span>{{ post.date | date_to_string }}</span> » 
+                    <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                    <p>{{ post.excerpt }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
 </body>
 </html>

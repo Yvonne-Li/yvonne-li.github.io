@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Yvonne Li</title>
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
+<body>
+    <header>
+        <h1>Yvonne Li</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/cv">CV</a></li>
+                <li><a href="/blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} Yvonne Li. All rights reserved.</p>
+        <p>
+            <a href="mailto:yvonneli.annalyst@gmail.com">Email</a> |
+            <a href="https://github.com/yvonne-li">GitHub</a> |
+            <a href="https://www.linkedin.com/in/yvonneli-yli/">LinkedIn</a>
+        </p>
+    </footer>
+</body>
+</html>

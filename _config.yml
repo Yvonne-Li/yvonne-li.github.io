@@ -5,6 +5,10 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <a href="https://www.linkedin.com/in/yvonneli-yli/">View My LinkedIn Profile</a>
   <br><br>
- 
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
  
 theme: jekyll-theme-minimal

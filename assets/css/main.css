@@ -1,6 +1,6 @@
 /* Font Import and Variables */
 :root {
-    --heading-font: 'Segoe UI', serif;
+    --heading-font: 'Segoe UI', 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif; /* Updated heading font stack */
     --body-font: 'Atkinson Hyperlegible', sans-serif;
     --mono-font: 'SF Mono', 'Consolas', monospace;
     --text-primary: #333;
@@ -11,7 +11,6 @@
     --link-hover: #333;
     --background-hover: #fafafa;
 }
-
 /* Base Styles */
 body {
     margin: 40px auto;
@@ -86,9 +85,12 @@ h1 {
     display: none;
 }
 
+/* Update h2 specific styling */
 h2 { 
+    font-family: var(--heading-font);
     font-size: 1.8em;
     margin-bottom: 15px;
+    font-weight: 700; /* This makes it bold */
 }
 
 p {

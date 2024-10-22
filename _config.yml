@@ -5,10 +5,25 @@ description: > # your text below (remove <br> elements if you don't need line br
   <br><br>
   <a href="https://www.linkedin.com/in/yvonneli-yli/">View My LinkedIn Profile</a>
   <br><br>
+# Build settings
 markdown: kramdown
-highlighter: rouge
-kramdown:
-  input: GFM
-  syntax_highlighter: rouge
- 
-theme: jekyll-theme-minimal
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-github-metadata
+
+# Exclude these files from production site
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - app.py
+  - .env
+  - venv/
+  - __pycache__/
+  - .git
+  - .gitignore

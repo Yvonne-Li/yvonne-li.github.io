@@ -99,7 +99,26 @@ p {
     color: var(--text-secondary);
     margin-bottom: 1em;
 }
+strong {
+    font-weight: 700;
+    color: var(--text-primary);
+}
 
+#experience li {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 0.5em;
+}
+
+#experience p {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+#skills li {
+    margin-bottom: 0.75em;
+    color: var(--text-secondary);
+}
 /* Split Layout Styles */
 .split-container {
     display: flex;

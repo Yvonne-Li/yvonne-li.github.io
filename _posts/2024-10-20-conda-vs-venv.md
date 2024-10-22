@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "conda vs venv"
-date: YYYY-MM-DD
+date: 2024-10-20
 custom_excerpt: "how to use conda or venv"
 ---
 

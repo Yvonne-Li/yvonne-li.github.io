@@ -1,6 +1,6 @@
 /* Font Import and Variables */
 :root {
-    --heading-font: 'Playfair Display', serif;
+    --heading-font: 'Segoe UI', serif;
     --body-font: 'Atkinson Hyperlegible', sans-serif;
     --mono-font: 'SF Mono', 'Consolas', monospace;
     --text-primary: #333;

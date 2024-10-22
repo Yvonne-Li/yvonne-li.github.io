@@ -14,6 +14,7 @@ logging.basicConfig(level=logging.INFO)
 # Load environment variables
 openai.api_key = os.getenv('OPENAI_API_KEY')
 organization = os.getenv('OPENAI_ORG_ID')
+project_id = os.getenv('PROJECT_ID')
 
 # API client initialization
 client = openai

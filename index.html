@@ -7,20 +7,23 @@ show_title: false
     <!-- Left side - Introduction -->
     <div class="intro-section">
         <h2>Welcome!</h2>
-        <p>Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on </p>
+        <p>Hi, I'm Yvonne Li. [Your introduction text here]</p>
         <!-- Add any other introduction content you want -->
     </div>
 
-    <!-- Right side - Blog posts -->
+    <!-- Right side - Blog posts with updated classes -->
     <div class="blog-section">
         <h2>Latest Posts</h2>
         <ul class="posts">
             {% for post in site.posts %}
             <li>
-                <span>{{ post.date | date_to_string }}</span> » 
+                <div class="post-meta">
+                    <span>{{ post.date | date_to_string }}</span>
+                </div>
                 <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
                 {% if post.custom_excerpt %}
-                    <p>{{ post.custom_excerpt }}</p>
+                    <p class="post-excerpt">{{ post.custom_excerpt }}</p>
+                    <a href="{{ post.url }}" class="read-more">Read more →</a>
                 {% endif %}
             </li>
             {% endfor %}

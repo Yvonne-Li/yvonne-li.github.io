@@ -3,6 +3,7 @@ layout: post
 title: "conda vs venv"
 date: 2024-10-20
 custom_excerpt: "how to use conda or venv"
+show_title: false
 ---
 
 conda needs a environment.yaml file to determine the packages needed

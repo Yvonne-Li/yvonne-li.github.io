@@ -3,5 +3,27 @@ layout: default
 title: Home
 show_title: false
 ---
-<h1>Hi there, I'm Yvonne Li!</h1>
-<p>Here, you can check out what I'm working on.</p>
+<div class="split-container">
+    <!-- Left side - Introduction -->
+    <div class="intro-section">
+        <h2>Welcome!</h2>
+        <p>Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on </p>
+        <!-- Add any other introduction content you want -->
+    </div>
+
+    <!-- Right side - Blog posts -->
+    <div class="blog-section">
+        <h2>Latest Posts</h2>
+        <ul class="posts">
+            {% for post in site.posts %}
+            <li>
+                <span>{{ post.date | date_to_string }}</span> » 
+                <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                {% if post.custom_excerpt %}
+                    <p>{{ post.custom_excerpt }}</p>
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

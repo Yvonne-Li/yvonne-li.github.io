@@ -107,6 +107,81 @@ nav ul li a.active {
     /* Optional: make the active link a different color */
     color: #333;
 }
+/* Split layout styles */
+.split-container {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.intro-section {
+    flex: 0 0 40%;  /* Takes up 40% of the container width */
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    padding-right: 20px;
+    border-right: 1px solid #eee;
+}
+
+.blog-section {
+    flex: 0 0 60%;  /* Takes up 60% of the container width */
+}
+
+/* Blog post list styles */
+.posts {
+    list-style: none;
+    padding: 0;
+}
+
+.posts li {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.posts li:last-child {
+    border-bottom: none;
+}
+
+.posts span {
+    color: #999;
+    font-family: monospace;
+}
+
+.posts a {
+    display: block;
+    margin: 5px 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.posts p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media screen and (max-width: 800px) {
+    .split-container {
+        flex-direction: column;
+    }
+
+    .intro-section {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+
+    .intro-section, .blog-section {
+        flex: 1 0 100%;
+        padding-right: 0;
+    }
+}
+
 
 /* If you want to keep titles hidden globally, add this */
 h1 {

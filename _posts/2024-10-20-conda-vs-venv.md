@@ -8,15 +8,13 @@ show_title: false
 
 conda needs a environment.yaml file to determine the packages needed
 
- `python3 -m venv .venv`
-
+```bash
+`python3 -m venv .venv`
 `source myvenv/bin/activate`
-
 `which python`
-
-`pip install -r /Users/lyonnce/git/AdTracking_Fraud/requirements.txt`
-
+`pip install -r /Users/requirements.txt`
 pip3 uninstall -r requirements.txt -y
+```
 
 The only solution I found was to delete the `venv` and recreate it. I followed these steps but I'll provide a brief summary for Windows:
 

@@ -5,8 +5,6 @@ date: YYYY-MM-DD
 custom_excerpt: "how to use conda or venv"
 ---
 
-# conda vs venv
-
 conda needs a environment.yaml file to determine the packages needed
 
  `python3 -m venv .venv`

@@ -7,16 +7,19 @@
     <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/cv">CV</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="mailto:yvonneli.dev@gmail.com">📧</a></li>
-            <li><a href="https://github.com/yvonne-li">Github</a></li>
-        </ul>
-    </nav>
+    <div class="header-container">
+        <img src="/assets/yli.png" alt="Yvonne Li" class="profile-image">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/cv">CV</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="mailto:yvonneli.dev@gmail.com">📧</a></li>
+                <li><a href="https://github.com/yvonne-li">Github</a></li>
+            </ul>
+        </nav>
+    </div>
     <div class="container">
         {% if page.show_title != false %}
             <h1>{{ page.title }}</h1>

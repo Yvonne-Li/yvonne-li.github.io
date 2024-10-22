@@ -1,93 +1,89 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Create the chat button
+    // Create chat elements
     const chatButton = document.createElement('button');
-    chatButton.innerText = 'Chat';
-    chatButton.style.position = 'fixed';
-    chatButton.style.bottom = '20px';
-    chatButton.style.right = '20px';
-    document.body.appendChild(chatButton);
+    chatButton.className = 'chat-button';
+    chatButton.innerText = '💭 Chat';
 
-    // Create the chat container
     const chatContainer = document.createElement('div');
-    chatContainer.style.display = 'none';
-    chatContainer.style.position = 'fixed';
-    chatContainer.style.bottom = '60px';
-    chatContainer.style.right = '20px';
-    chatContainer.style.width = '300px';
-    chatContainer.style.height = '400px';
-    chatContainer.style.border = '1px solid black';
-    chatContainer.style.backgroundColor = 'white';
-    chatContainer.style.zIndex = '1000'; // Ensure it stays on top of other elements
-    document.body.appendChild(chatContainer);
+    chatContainer.className = 'chat-container';
 
-    // Create the chat messages container
+    const chatHeader = document.createElement('div');
+    chatHeader.className = 'chat-header';
+    chatHeader.innerText = 'Chat with AI';
+
     const chatMessages = document.createElement('div');
-    chatMessages.style.height = '350px';
-    chatMessages.style.overflowY = 'scroll';
-    chatMessages.style.padding = '10px';
-    chatContainer.appendChild(chatMessages);
+    chatMessages.className = 'chat-messages';
 
-    // Create the chat input field
+    const inputContainer = document.createElement('div');
+    inputContainer.className = 'chat-input-container';
+
     const chatInput = document.createElement('input');
-    chatInput.style.width = '100%';
-    chatInput.style.padding = '10px';
-    chatInput.style.boxSizing = 'border-box';
-    chatContainer.appendChild(chatInput);
+    chatInput.className = 'chat-input';
+    chatInput.placeholder = 'Type your message...';
 
-    // Toggle chat window visibility
+    // Assemble the chat interface
+    document.body.appendChild(chatButton);
+    document.body.appendChild(chatContainer);
+    chatContainer.appendChild(chatHeader);
+    chatContainer.appendChild(chatMessages);
+    chatContainer.appendChild(inputContainer);
+    inputContainer.appendChild(chatInput);
+
+    // Toggle chat window
     chatButton.addEventListener('click', () => {
-        chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
+        chatContainer.style.display = chatContainer.style.display === 'none' ? 'flex' : 'none';
+        if (chatContainer.style.display === 'flex') {
+            chatInput.focus();
+        }
     });
 
-    // Handle Enter key press in input
+    // Handle input
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             const message = chatInput.value.trim();
+            if (!message) return;
 
-            // Input validation: Ensure user input is not empty
-            if (message === '') {
-                alert('Please enter a message!');
-                return;
-            }
-
-            // Clear the input field and add the user message to the chat
+            addMessage('You', message, 'user');
             chatInput.value = '';
-            addMessage('You', message);
 
-            // Show a loader or placeholder message while waiting for the response
-            addMessage('Bot', '...thinking...');
+            const thinkingMessage = addMessage('AI', '...thinking...', 'bot-thinking');
 
-            // Send the message to the Flask server
             fetch('http://localhost:5000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ message: message }),
+                body: JSON.stringify({ message }),
             })
             .then(response => response.json())
             .then(data => {
-                // Remove the loader message and show the bot's response
-                chatMessages.lastChild.remove(); // Removes '...thinking...' message
-                addMessage('Bot', data.response);
+                thinkingMessage.remove();
+                addMessage('AI', data.response, 'bot');
             })
             .catch(error => {
-                // Handle any errors and display a user-friendly message
-                chatMessages.lastChild.remove(); // Removes '...thinking...' message
-                addMessage('Bot', 'Sorry, something went wrong.');
+                thinkingMessage.remove();
+                addMessage('AI', 'Sorry, I encountered an error. Please try again.', 'bot-error');
                 console.error('Error:', error);
             });
         }
     });
 
-    // Function to add a new message to the chat window
-    function addMessage(sender, message) {
-        const messageElement = document.createElement('p');
-        messageElement.innerText = `${sender}: ${message}`;
-        messageElement.style.margin = '5px 0';
+    // Add messages
+    function addMessage(sender, message, type) {
+        const messageElement = document.createElement('div');
+        messageElement.className = `chat-message ${type}`;
+        messageElement.innerHTML = `<strong>${sender}:</strong> ${message.replace(/\n/g, '<br>')}`;
+        
         chatMessages.appendChild(messageElement);
-
-        // Scroll to the bottom of the chat after a new message is added
         chatMessages.scrollTop = chatMessages.scrollHeight;
+        
+        return messageElement;
     }
+
+    // Close on click outside
+    document.addEventListener('click', (e) => {
+        if (!chatContainer.contains(e.target) && e.target !== chatButton) {
+            chatContainer.style.display = 'none';
+        }
+    });
 });

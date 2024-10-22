@@ -1,29 +1,101 @@
-title:   Yvonne Li
-logo: "/assets/yli.png" # your photo (or logo) here
-description: > # your text below (remove <br> elements if you don't need line breaks)
+# Site Settings
+title: Yvonne Li
+logo: "/assets/images/yli.png"
+email: yvonneli.dev@gmail.com
+description: >
   My name is Yvonne, I have over 5 years of data analytics experience in financial industry, telecom and retail.
-  <br><br>
-  <a href="https://www.linkedin.com/in/yvonneli-yli/">View My LinkedIn Profile</a>
-  <br><br>
-# Build settings
+
+# Author Settings
+author:
+  name: Yvonne Li
+  email: yvonneli.dev@gmail.com
+
+# Social Links
+social:
+  linkedin: https://www.linkedin.com/in/yvonneli-yli/
+  github: https://github.com/yvonne-li
+
+# SEO Settings
+url: "https://yvonne-li.github.io" # your site's domain
+baseurl: "" # the subpath of your site, e.g. /blog
+lang: en_US
+timezone: America/Los_Angeles # adjust this to your timezone
+
+# Build Settings
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-github-metadata
+  - jekyll-sitemap
 
-# Exclude these files from production site
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Yvonne Li"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+# Exclude from processing
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+  # Development files
+  - backend/
   - app.py
+  - test_app.py
+  - requirements.txt
   - .env
   - venv/
   - __pycache__/
-  - .git
+  - website/
+  - model/
+  
+  # Build system files
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - .sass-cache/
+  - .jekyll-cache/
+  
+  # Git files
+  - .git/
   - .gitignore
+  - README.md
+  
+  # OS files
+  - .DS_Store
+
+# Include specific files/folders
+include:
+  - _posts
+  - assets
+  - .nojekyll
+
+# Sass configuration (if you use Sass)
+sass:
+  style: compressed
+  sourcemap: never
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  syntax_highlighter: rouge

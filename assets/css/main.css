@@ -10,8 +10,8 @@
 
 .profile-image {
     /* Increased from 50px to 80px for slightly larger but still compact size */
-    width: 80px;
-    height: 80px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
     /* Added to ensure image stays on the left */
@@ -80,6 +80,26 @@ p {
     font-size: 1.5em;
     line-height: 1.4em;
     color: #333;
+}
+
+.posts {
+    list-style: none;
+    padding: 0;
+}
+
+.posts li {
+    margin-bottom: 20px;
+}
+
+.posts span {
+    color: #999;
+    font-family: monospace;
+}
+
+.posts p {
+    margin-top: 5px;
+    font-size: 1em;
+    color: #666;
 }
 
 /* Responsive Design */

@@ -11,19 +11,16 @@
         <img src="/assets/yli.png" alt="Yvonne Li" class="profile-image">
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/cv">CV</a></li>
-                <li><a href="/blog">Blog</a></li>
+                <li><a href="/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+                <li><a href="/about" {% if page.url == '/about/' %}class="active"{% endif %}>About</a></li>
+                <li><a href="/cv" {% if page.url == '/cv/' %}class="active"{% endif %}>CV</a></li>
+                <li><a href="/blog" {% if page.url == '/blog/' %}class="active"{% endif %}>Blog</a></li>
                 <li><a href="mailto:yvonneli.dev@gmail.com">📧</a></li>
                 <li><a href="https://github.com/yvonne-li">Github</a></li>
             </ul>
         </nav>
     </div>
     <div class="container">
-        {% if page.show_title != false %}
-            <h1>{{ page.title }}</h1>
-        {% endif %}
         {{ content }}
     </div>
 </body>

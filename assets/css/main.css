@@ -101,6 +101,17 @@ p {
     font-size: 1em;
     color: #666;
 }
+/* Add this to your existing nav styles */
+nav ul li a.active {
+    text-decoration: underline;
+    /* Optional: make the active link a different color */
+    color: #333;
+}
+
+/* If you want to keep titles hidden globally, add this */
+h1 {
+    display: none;
+}
 
 /* Responsive Design */
 @media screen and (max-width: 600px) {

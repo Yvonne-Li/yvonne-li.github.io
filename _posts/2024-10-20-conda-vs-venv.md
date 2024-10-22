@@ -3,16 +3,16 @@ layout: post
 title: "conda vs venv"
 date: 2024-10-20
 custom_excerpt: "how to use conda or venv"
-show_title: false
+
 ---
 
 conda needs a environment.yaml file to determine the packages needed
 
 ```bash
-`python3 -m venv .venv`
-`source myvenv/bin/activate`
-`which python`
-`pip install -r /Users/requirements.txt`
+python3 -m venv .venv
+source myvenv/bin/activate
+which python
+pip install -r /Users/requirements.txt
 pip3 uninstall -r requirements.txt -y
 ```
 

@@ -26,4 +26,6 @@ The only solution I found was to delete the `venv` and recreate it. I followed
 6. `pip install -r requirements.txt` to install the requirements.
 
 to make sure install all the packages in requirements.txt
-`cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 python -m pip install`
+```bash
+cat requirements.txt | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 python -m pip install
+```

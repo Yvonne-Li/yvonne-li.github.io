@@ -10,7 +10,7 @@ custom_excerpt: "CS6430 SAT - Introduction to Software Testing"
 Status: #review  #knowledge 
 Tags: #SAT #testing #softwaredev
 
-# CS6430 SAT - Introduction to Software Testing
+# CS6340 SAT - Introduction to Software Testing
 ## Observations
 ### the need for specifications
 - testing checks whether program implementation agrees with program specification

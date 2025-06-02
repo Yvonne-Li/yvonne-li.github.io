@@ -19,7 +19,7 @@ social:
 url: "https://yvonne-li.github.io" # your site's domain
 baseurl: "" # the subpath of your site, e.g. /blog
 lang: en_US
-timezone: America/Los_Angeles # adjust this to your timezone
+timezone: America/Toronto # adjust this to your timezone
 
 # Build Settings
 markdown: kramdown

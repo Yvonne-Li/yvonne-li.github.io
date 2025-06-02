@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Update this URL after deploying to Vercel
     // Replace 'your-vercel-app-name' with your actual Vercel app name
-    const API_URL = 'yvonne-li-github-io.vercel.app';
+    const API_URL = 'https://yvonne-li-github-fp12vcmm9-yvonne-lis-projects.vercel.app';
     
     // For local development, uncomment the line below:
     // const API_URL = 'http://localhost:5001/chat';

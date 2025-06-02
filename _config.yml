@@ -3,7 +3,7 @@ title: Yvonne Li
 logo: "/assets/images/yli.png"
 email: yvonneli.dev@gmail.com
 description: >
-  My name is Yvonne, I have over 5 years of data analytics experience in financial industry, telecom and retail.
+  Hello Travellers!
 
 # Author Settings
 author:
@@ -16,8 +16,8 @@ social:
   github: https://github.com/yvonne-li
 
 # SEO Settings
-url: "https://yvonne-li.github.io" # your site's domain
-baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://yvonne-li.github.io" 
+baseurl: "" 
 lang: en_US
 timezone: America/Toronto # adjust this to your timezone
 
@@ -51,7 +51,8 @@ defaults:
 
 # Exclude from processing
 exclude:
-  # Development files
+  # Backend/API files
+  - my-pun-api/
   - backend/
   - app.py
   - test_app.py
@@ -61,6 +62,8 @@ exclude:
   - __pycache__/
   - website/
   - model/
+  - vercel.json
+  - *.py
   
   # Build system files
   - Gemfile

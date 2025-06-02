@@ -98,4 +98,12 @@ instance/
 *.retry
 
 # Local development
-*.local
+*.localbackend/
+
+
+backend/
+.env
+__pycache__/
+*.pyc
+node_modules/
+.vercel/

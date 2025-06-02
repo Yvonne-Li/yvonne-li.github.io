@@ -1,23 +1,25 @@
-_site
-.sass-cache
-.jekyll-cache
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
 .jekyll-metadata
-vendor
-backend/my-pun-api/.env
-*.env
-.env.*
-# Backend directory
-backend/
-website/
+.bundle/
+vendor/
 
 # Environment variables and sensitive files
-.env
+*.env
+backend/my-pun-api/.env
+.env.*
 config/
 *.log
 *.pem
 *.key
 secrets.yaml
 credentials.json
+
+# Backend directory (since you exclude this)
+backend/
+website/
 
 # Python
 __pycache__/
@@ -26,6 +28,7 @@ __pycache__/
 *.so
 .Python
 env/
+venv/
 build/
 develop-eggs/
 dist/
@@ -41,15 +44,13 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-venv/
 .pytest_cache/
 
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-.bundle/
-vendor/
-.jekyll-cache/
-Gemfile.lock
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

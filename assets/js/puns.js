@@ -1,8 +1,16 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const searchButton = document.getElementById('search-button');
     const searchInput = document.getElementById('search-input');
     const responseContainer = document.getElementById('response-container');
     const loadingIndicator = document.getElementById('loading');
+
+    // Update this URL after deploying to Vercel
+    // Replace 'your-vercel-app-name' with your actual Vercel app name
+    const API_URL = 'yvonne-li-github-io.vercel.app';
+    
+    // For local development, uncomment the line below:
+    // const API_URL = 'http://localhost:5001/chat';
 
     searchButton.addEventListener('click', async function() {
         const topic = searchInput.value.trim();
@@ -17,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
         responseContainer.innerHTML = '';
 
         try {
-            const response = await fetch('http://localhost:5001/chat', {
+            // Fixed: Now uses the API_URL variable instead of hardcoded localhost
+            const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -35,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } catch (error) {
             console.error('Error:', error);
-            responseContainer.innerHTML = 'Error: Could not connect to the server. Make sure the Flask app is running.';
+            responseContainer.innerHTML = 'Error: Could not connect to the pun server. Please try again later.';
         } finally {
             // Hide loading indicator
             loadingIndicator.style.display = 'none';
@@ -49,3 +58,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+</artArtifact>
+

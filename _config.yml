@@ -63,7 +63,7 @@ exclude:
   - website/
   - model/
   - vercel.json
-  - *.py
+  - "*.py"
   
   # Build system files
   - Gemfile

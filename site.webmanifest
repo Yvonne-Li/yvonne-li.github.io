@@ -1,0 +1,16 @@
+{
+    "name": "Yvonne Li",
+    "short_name": "YLi",
+    "description": "Yvonne Li's personal website and portfolio",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+    "icons": [
+        {
+            "src": "/assets/images/yli.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ]
+}

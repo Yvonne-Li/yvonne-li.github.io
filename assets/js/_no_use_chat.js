@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             const thinkingMessage = addMessage('AI', '...thinking...', 'bot-thinking');
 
-            fetch('http://localhost:5000/chat', {
+            fetch('http://localhost:5001/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -6,8 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // API URLs to try (in order of preference)
     const API_URLS = [
-        'https://yvonne-pun-api.vercel.app/api/puns',  // Your free endpoint
-        'https://yvonne-pun-api.vercel.app/api/chat',  // Your OpenAI endpoint
+        'https://yvonne-pun-api.vercel.app/api/chat',  // Your free endpoint
+        'https://yvonne-pun-api.vercel.app/api/puns',  // Your OpenAI endpoint
         'http://localhost:5001/chat'  // Alternative port
     ];
 
@@ -58,7 +58,11 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     searchButton.addEventListener('click', async function() {
+        console.log('=== PUN GENERATION STARTED ===');
+        
         const topic = searchInput.value.trim();
+        console.log('Topic entered:', topic);
+        
         if (!topic) {
             responseContainer.innerHTML = '<div style="color: #d63031;">Please enter a topic for puns!</div>';
             return;
@@ -70,16 +74,20 @@ document.addEventListener('DOMContentLoaded', function() {
         loadingIndicator.style.display = 'block';
         responseContainer.innerHTML = '<div style="color: #666; font-style: italic; text-align: center;">Brewing up some puns... ☕</div>';
 
+        console.log('Starting API attempts...');
         let punsGenerated = false;
 
         // Try API endpoints first
         for (const apiUrl of API_URLS) {
             try {
-                console.log(`Trying API: ${apiUrl}`);
+                console.log(`🔄 Trying API: ${apiUrl}`);
 
                 // Create abort controller and timeout
                 const controller = new AbortController();
-                const timeoutId = setTimeout(() => controller.abort(), 5000);
+                const timeoutId = setTimeout(() => {
+                    console.log(`⏰ Timeout for ${apiUrl}`);
+                    controller.abort();
+                }, 5000);
 
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -88,26 +96,28 @@ document.addEventListener('DOMContentLoaded', function() {
                     signal: controller.signal
                 });
 
-                clearTimeout(timeoutId); // Stop the timeout if request completed
+                clearTimeout(timeoutId);
+                console.log(`📡 Response from ${apiUrl}:`, response.status, response.ok);
 
                 if (response.ok) {
                     const data = await response.json();
+                    console.log(`✅ Success with ${apiUrl}:`, data);
                     const cleaned = data.response.trim();
                     displayPuns(cleaned.includes('\n') ? cleaned : `${cleaned}\n`);
                     punsGenerated = true;
-                    console.log(`Success with API: ${apiUrl}`);
                     break;
+                } else {
+                    console.log(`❌ API ${apiUrl} responded with status:`, response.status);
                 }
             } catch (error) {
-                console.log(`Failed with API ${apiUrl}:`, error);
+                console.log(`💥 Failed with API ${apiUrl}:`, error.name, error.message);
                 continue; // Try next API
             }
         }
 
-
         // If all APIs failed, use sample puns
         if (!punsGenerated) {
-            console.log('All APIs failed, using sample puns');
+            console.log('🔄 All APIs failed, using sample puns');
             const puns = getSamplePuns(topic);
             displayPuns(puns.join('\n\n'));
         }
@@ -116,8 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
         searchButton.disabled = false;
         searchButton.textContent = 'Generate Puns';
         loadingIndicator.style.display = 'none';
+        
+        console.log('=== PUN GENERATION COMPLETED ===');
     });
-
     // Allow Enter key to trigger search
     searchInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
@@ -146,6 +157,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function displayPuns(punsText) {
+        console.log('🎨 displayPuns called with:', punsText);
+        
         const puns = punsText.split('\n').filter(pun => pun.trim().length > 0);
         
         let html = '';
@@ -159,32 +172,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     border-radius: 6px;
                     border-left: 3px solid #FFD700;
                     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-                    opacity: 0;
-                    animation: fadeInPun 0.5s ease-in forwards;
-                    animation-delay: ${index * 0.15}s;
+                    opacity: 1;
                 ">${cleanPun}</div>`;
             }
         });
         
-        // Add CSS animation if not already present
-        if (!document.querySelector('#pun-animations')) {
-            const style = document.createElement('style');
-            style.id = 'pun-animations';
-            style.textContent = `
-                @keyframes fadeInPun {
-                    from { 
-                        opacity: 0; 
-                        transform: translateY(10px); 
-                    }
-                    to { 
-                        opacity: 1; 
-                        transform: translateY(0); 
-                    }
-                }
-            `;
-            document.head.appendChild(style);
-        }
-        
         responseContainer.innerHTML = html;
+        console.log('🎨 Puns should now be visible without animation!');
     }
 });

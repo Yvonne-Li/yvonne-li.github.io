@@ -448,3 +448,38 @@ pre::-webkit-scrollbar-track {
     }
 }
 
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-text {
+    flex: 2; /* Takes up more space (2/3 of container) */
+}
+
+.about-image {
+    flex: 0 0 200px; /* Fixed width of 200px, smaller than before */
+    margin-left: auto; /* Pushes it more to the right */
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .about-image {
+        flex: none;
+        max-width: 150px;
+        align-self: center;
+    }
+}

@@ -1,3 +1,11 @@
+---
+layout: post
+title: "LLVM IR Iteration"
+date: 2025-06-07
+custom_excerpt: "How it works"
+---
+
+
 **STL-style** refers to following the design patterns and conventions established by the **Standard Template Library (STL)**, which is a fundamental part of the C++ standard library.
 
 ## Core STL Design Patterns

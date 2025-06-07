@@ -9,7 +9,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <!-- Security headers -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' http://localhost:5000 https://localhost:5000; connect-src 'self' http://localhost:5001 https://localhost:5001; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' http://localhost:5000 https://localhost:5000; connect-src 'self' https://yvonne-pun-api.vercel.app http://localhost:5001 https://localhost:5001; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     
@@ -78,7 +78,7 @@
             <ul>
                 <li><a href="/" >Home</a></li>
                 <li><a href="/about" class="active" aria-current="page">About</a></li>
-          <!--       <li><a href="/cv" >CV</a></li> -->
+                <li><a href="/posts" >Posts</a></li> 
                 <li>
                     <a 
                         href="mailto:yvonneli.dev@gmail.com" 
@@ -107,14 +107,22 @@
     </header>
 
     <main id="main" class="container" tabindex="-1">
+        <div class="about-container">
+    <div class="about-text">
         <h2> </h2>
-<ul>
-	<li>I'm Yvonne, 📍 Toronto, ON. </li>
-	<li>working with loyalty and marketing data at bank </li>
-	<li>watching: Adolescence </li>
-	<li>reading: The Beginning of Infinity∞, Approaching (Almost) Any Machine Learning Problem </li>
-	<li>playing: Elden Ring</li>
-</ul>
+        <ul>
+        I'm Yvonne, 📍 Toronto, ON, love RedNote, tennis, hiking, &amp; thinking🤔, have a cat called Hugo.
+            <li>📊 working with loyalty and marketing data at bank </li>
+            <li>📺 watching: Adolescence </li>
+            <li>📖 reading: The Beginning of Infinity∞, Approaching (Almost) Any Machine Learning Problem </li>
+            <li>👾 playing: Elden Ring (still stuck in Scadutree Avatar and Malenia Blade of Miquella) </li>
+            <li>👩‍💻 building/learning: C++, GenAI, web design, 🥁 drum! </li>
+        </ul>
+    </div>
+    <div class="about-image">
+        <img src="/assets/images/posts/Hugo-1.jpeg" alt="Hugo the cat" />
+    </div>
+</div>
 
     </main>
 
@@ -123,7 +131,7 @@
     </footer>
 
     <!-- Chat script -->
-    <script src="/assets/js/chat.js" defer></script>
+    <script src="/assets/js/puns.js" defer></script>
 
     
 </body>

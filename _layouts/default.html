@@ -114,12 +114,5 @@
     <!-- Chat script -->
     <script src="/assets/js/puns.js" defer></script>
 
-    {% if jekyll.environment == "production" %}
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js');
-        }
-    </script>
-    {% endif %}
 </body>
 </html>

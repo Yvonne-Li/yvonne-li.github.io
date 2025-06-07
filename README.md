@@ -19,11 +19,23 @@ git commit -m "Add Gemfile.lock for GitHub Pages"
 git push
 ```
 
-TRY OPENAI API OUT
+TRY OPENAI API out in Bash
 ```Bash
 curl -X POST https://yvonne-pun-api.vercel.app/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "Tell me puns about cats"}'
+```
+
+Test OPENAI API out in browser console
+```Bash
+fetch('https://yvonne-pun-api.vercel.app/api/chat', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ message: 'Generate puns about cats' })
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 ```
 
 Create Project structure txt file

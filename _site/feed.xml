@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-07T15:10:50-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-07T16:28:33-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
 </subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">LLVM IR Iteration</title><link href="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html" rel="alternate" type="text/html" title="LLVM IR Iteration" /><published>2025-06-07T00:00:00-04:00</published><updated>2025-06-07T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/07/LLVM-IR-Iteration</id><content type="html" xml:base="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html"><![CDATA[<p><strong>STL-style</strong> refers to following the design patterns and conventions established by the <strong>Standard Template Library (STL)</strong>, which is a fundamental part of the C++ standard library.</p>
 
 <h2 id="core-stl-design-patterns">Core STL Design Patterns</h2>
@@ -601,7 +601,64 @@ void* worker_thread(void* arg) {
 
 <hr />
 
-<p>Answer from Perplexity: <a href="pplx.ai/share">pplx.ai/share</a></p>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[Comprehensive Analysis of Threads and Concurrency in Modern Computing]]></summary></entry><entry><title type="html">conda vs venv</title><link href="http://localhost:4000/2024/10/20/conda-vs-venv.html" rel="alternate" type="text/html" title="conda vs venv" /><published>2024-10-20T00:00:00-04:00</published><updated>2024-10-20T00:00:00-04:00</updated><id>http://localhost:4000/2024/10/20/conda-vs-venv</id><content type="html" xml:base="http://localhost:4000/2024/10/20/conda-vs-venv.html"><![CDATA[<p>conda needs a environment.yaml file to determine the packages needed</p>
+<p>Answer from Perplexity: <a href="pplx.ai/share">pplx.ai/share</a></p>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[Comprehensive Analysis of Threads and Concurrency in Modern Computing]]></summary></entry><entry><title type="html">Trip in Chile &amp;amp; Peru</title><link href="http://localhost:4000/2024/12/15/Trip-in-Latam.html" rel="alternate" type="text/html" title="Trip in Chile &amp;amp; Peru" /><published>2024-12-15T00:00:00-05:00</published><updated>2024-12-15T00:00:00-05:00</updated><id>http://localhost:4000/2024/12/15/Trip-in-Latam</id><content type="html" xml:base="http://localhost:4000/2024/12/15/Trip-in-Latam.html"><![CDATA[<style>
+.post-image {
+    max-width: 400px; /* Adjust size as needed */
+    margin: 0 0 20px 0; /* Remove auto margins for left alignment */
+}
+.post-image img {
+    width: 100%;
+    height: auto;
+}
+.post-image figcaption {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 5px;
+}
+</style>
+
+<p>@Cusco, Peru</p>
+<figure class="post-image">
+<img src="/assets/images/posts/2024-12-15-01.jpeg" alt="Description" />
+<figcaption>Souvenirs from Peru</figcaption>
+</figure>
+
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-02.jpeg" alt="Description" />
+  <figcaption>Salt Mine of Maras</figcaption>
+</figure>
+
+<p>@Atacama, Chile</p>
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-04.jpeg" alt="Description" />
+  <figcaption>Mars-like landscape @ Valle de la Luna</figcaption>
+</figure>
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-10.jpg" alt="Description" />
+  <figcaption>Landscape at El Tatio geysers</figcaption>
+</figure>
+
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-05.jpeg" alt="Description" />
+  <figcaption>Vicuña</figcaption>
+</figure>
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-07.jpeg" alt="Description" />
+  <figcaption>Lizard</figcaption>
+</figure>
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-06.jpeg" alt="Description" />
+  <figcaption>Sheds &amp; Sun</figcaption>
+</figure>
+<p>@Torres del Paine National Park, Chile</p>
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-09.jpeg" alt="Description" />
+  <figcaption>Torres del Paine</figcaption>
+</figure>
+<figure class="post-image">
+  <img src="/assets/images/posts/2024-12-15-08.jpeg" alt="Description" />
+  <figcaption>Trail that we saw a puma from far away</figcaption>
+</figure>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">conda vs venv</title><link href="http://localhost:4000/2024/10/20/conda-vs-venv.html" rel="alternate" type="text/html" title="conda vs venv" /><published>2024-10-20T00:00:00-04:00</published><updated>2024-10-20T00:00:00-04:00</updated><id>http://localhost:4000/2024/10/20/conda-vs-venv</id><content type="html" xml:base="http://localhost:4000/2024/10/20/conda-vs-venv.html"><![CDATA[<p>conda needs a environment.yaml file to determine the packages needed</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv .venv
 <span class="nb">source </span>myvenv/bin/activate

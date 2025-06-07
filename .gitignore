@@ -1,5 +1,8 @@
-
 vendor/
-Gemfile
 Gemfile.lock
 cleanup.sh
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+node_modules/

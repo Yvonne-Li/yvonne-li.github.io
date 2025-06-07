@@ -1,5 +1,164 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-06T22:35:17-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
-</subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">Software Testing</title><link href="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html" rel="alternate" type="text/html" title="Software Testing" /><published>2025-05-22T00:00:00-04:00</published><updated>2025-05-22T00:00:00-04:00</updated><id>http://localhost:4000/2025/05/22/Introduction%20to%20Software%20Testing</id><content type="html" xml:base="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html"><![CDATA[<p>Status: #review  #knowledge <br />
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-07T11:59:21-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
+</subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">Llvm Ir Iteration</title><link href="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html" rel="alternate" type="text/html" title="Llvm Ir Iteration" /><published>2025-06-07T00:00:00-04:00</published><updated>2025-06-07T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/07/LLVM-IR-Iteration</id><content type="html" xml:base="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html"><![CDATA[<p><strong>STL-style</strong> refers to following the design patterns and conventions established by the <strong>Standard Template Library (STL)</strong>, which is a fundamental part of the C++ standard library.</p>
+
+<h2 id="core-stl-design-patterns">Core STL Design Patterns</h2>
+
+<h3 id="1-iterator-pattern">1. <strong>Iterator Pattern</strong></h3>
+
+<p>STL uses iterators as a uniform way to traverse containers:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// STL vector example</span>
+<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">};</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">vec</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">vec</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">it</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-common-interface-conventions">2. <strong>Common Interface Conventions</strong></h3>
+
+<p>STL containers share consistent method names:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">begin()</code> / <code class="language-plaintext highlighter-rouge">end()</code> - start/end iterators</li>
+  <li><code class="language-plaintext highlighter-rouge">size()</code> - number of elements</li>
+  <li><code class="language-plaintext highlighter-rouge">empty()</code> - check if container is empty</li>
+  <li><code class="language-plaintext highlighter-rouge">insert()</code> / <code class="language-plaintext highlighter-rouge">erase()</code> - add/remove elements</li>
+</ul>
+
+<h3 id="3-template-based-design">3. <strong>Template-Based Design</strong></h3>
+
+<p>STL heavily uses templates for type safety and reusability:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">&gt;</span>
+<span class="k">class</span> <span class="nc">vector</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">};</span>
+</code></pre></div></div>
+
+<h2 id="how-llvm-adopts-stl-style">How LLVM Adopts STL-Style</h2>
+
+<p>LLVM IR classes follow these same patterns:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// LLVM follows STL conventions</span>
+<span class="n">Function</span><span class="o">*</span> <span class="n">F</span> <span class="o">=</span> <span class="cm">/* ... */</span><span class="p">;</span>
+
+<span class="c1">// STL-style iteration</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Function</span><span class="o">::</span><span class="n">iterator</span> <span class="n">BB</span> <span class="o">=</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">begin</span><span class="p">();</span> <span class="n">BB</span> <span class="o">!=</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">BB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">BasicBlock</span><span class="o">::</span><span class="n">iterator</span> <span class="n">I</span> <span class="o">=</span> <span class="n">BB</span><span class="o">-&gt;</span><span class="n">begin</span><span class="p">();</span> <span class="n">I</span> <span class="o">!=</span> <span class="n">BB</span><span class="o">-&gt;</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">I</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// process instruction</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// STL-style methods</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">F</span><span class="o">-&gt;</span><span class="n">empty</span><span class="p">())</span> <span class="p">{</span>          <span class="c1">// Like STL containers</span>
+    <span class="kt">size_t</span> <span class="n">numBB</span> <span class="o">=</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">size</span><span class="p">();</span> <span class="c1">// Like STL containers</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="stl-iterator-categories">STL Iterator Categories</h2>
+
+<p>STL defines different iterator types that LLVM also follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Iterator Type</th>
+      <th>Capabilities</th>
+      <th>Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Input Iterator</strong></td>
+      <td>Read-only, forward only</td>
+      <td><code class="language-plaintext highlighter-rouge">istream_iterator</code></td>
+    </tr>
+    <tr>
+      <td><strong>Output Iterator</strong></td>
+      <td>Write-only, forward only</td>
+      <td><code class="language-plaintext highlighter-rouge">ostream_iterator</code></td>
+    </tr>
+    <tr>
+      <td><strong>Forward Iterator</strong></td>
+      <td>Read/write, forward only</td>
+      <td><code class="language-plaintext highlighter-rouge">forward_list::iterator</code></td>
+    </tr>
+    <tr>
+      <td><strong>Bidirectional Iterator</strong></td>
+      <td>Read/write, forward/backward</td>
+      <td><code class="language-plaintext highlighter-rouge">list::iterator</code></td>
+    </tr>
+    <tr>
+      <td><strong>Random Access Iterator</strong></td>
+      <td>Read/write, jump to any position</td>
+      <td><code class="language-plaintext highlighter-rouge">vector::iterator</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="stl-style-benefits">STL-Style Benefits</h2>
+
+<h3 id="1-familiar-interface">1. <strong>Familiar Interface</strong></h3>
+
+<p>C++ developers already know these patterns:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This feels familiar to anyone who knows STL</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Module</span><span class="o">::</span><span class="n">iterator</span> <span class="n">F</span> <span class="o">=</span> <span class="n">M</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">F</span> <span class="o">!=</span> <span class="n">M</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">F</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// process function</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="2-generic-algorithms">2. <strong>Generic Algorithms</strong></h3>
+
+<p>Works with STL algorithms:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;algorithm&gt;</span><span class="cp">
+</span>
+<span class="c1">// Count functions in a module</span>
+<span class="kt">size_t</span> <span class="n">funcCount</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">distance</span><span class="p">(</span><span class="n">M</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">M</span><span class="p">.</span><span class="n">end</span><span class="p">());</span>
+
+<span class="c1">// Find a specific function</span>
+<span class="k">auto</span> <span class="n">it</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">find_if</span><span class="p">(</span><span class="n">M</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">M</span><span class="p">.</span><span class="n">end</span><span class="p">(),</span> 
+    <span class="p">[](</span><span class="k">const</span> <span class="n">Function</span><span class="o">&amp;</span> <span class="n">F</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">F</span><span class="p">.</span><span class="n">getName</span><span class="p">()</span> <span class="o">==</span> <span class="s">"main"</span><span class="p">;</span> <span class="p">});</span>
+</code></pre></div></div>
+
+<h3 id="3-range-based-for-loops-c11">3. <strong>Range-Based For Loops</strong> (C++11+)</h3>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Modern C++ range-based for loop works because of STL-style design</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">F</span> <span class="o">:</span> <span class="n">M</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">BB</span> <span class="o">:</span> <span class="n">F</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span><span class="o">&amp;</span> <span class="n">I</span> <span class="o">:</span> <span class="n">BB</span><span class="p">)</span> <span class="p">{</span>
+            <span class="c1">// process instruction</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="available-iterator-types-in-llvm">Available Iterator Types in LLVM</h2>
+
+<p>From the document, LLVM provides these STL-style iterator types:</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Different iterator types for different LLVM structures</span>
+<span class="n">Module</span><span class="o">::</span><span class="n">iterator</span>        <span class="c1">// Iterates over functions in a module</span>
+<span class="n">Function</span><span class="o">::</span><span class="n">iterator</span>      <span class="c1">// Iterates over basic blocks in a function  </span>
+<span class="n">BasicBlock</span><span class="o">::</span><span class="n">iterator</span>    <span class="c1">// Iterates over instructions in a basic block</span>
+<span class="n">Value</span><span class="o">::</span><span class="n">use_iterator</span>     <span class="c1">// Iterates over uses of a value</span>
+<span class="n">User</span><span class="o">::</span><span class="n">op_iterator</span>       <span class="c1">// Iterates over operands of a user</span>
+</code></pre></div></div>
+
+<h2 id="comparison-stl-style-vs-custom-approaches">Comparison: STL-Style vs Custom Approaches</h2>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// STL-style (what LLVM uses)</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">Function</span><span class="o">::</span><span class="n">iterator</span> <span class="n">BB</span> <span class="o">=</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">begin</span><span class="p">();</span> <span class="n">BB</span> <span class="o">!=</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">BB</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Standard, predictable interface</span>
+<span class="p">}</span>
+
+<span class="c1">// Hypothetical custom approach (what LLVM could have done differently)</span>
+<span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">getBasicBlockCount</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">BasicBlock</span><span class="o">*</span> <span class="n">BB</span> <span class="o">=</span> <span class="n">F</span><span class="o">-&gt;</span><span class="n">getBasicBlock</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="c1">// Less familiar, inconsistent across different classes</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>The STL-style approach makes LLVM more approachable for C++ developers because they can leverage their existing knowledge of STL patterns and conventions. This design choice reduces the learning curve and makes the API more intuitive and consistent.</p>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[STL-style refers to following the design patterns and conventions established by the Standard Template Library (STL), which is a fundamental part of the C++ standard library.]]></summary></entry><entry><title type="html">Software Testing</title><link href="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html" rel="alternate" type="text/html" title="Software Testing" /><published>2025-05-22T00:00:00-04:00</published><updated>2025-05-22T00:00:00-04:00</updated><id>http://localhost:4000/2025/05/22/Introduction%20to%20Software%20Testing</id><content type="html" xml:base="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html"><![CDATA[<p>Status: #review  #knowledge <br />
 Tags: #SAT #testing #softwaredev</p>
 
 <h1 id="cs6340-sat---introduction-to-software-testing">CS6340 SAT - Introduction to Software Testing</h1>

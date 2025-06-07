@@ -13,7 +13,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     
-    <title>Introduction to Software Testing - Yvonne Li</title>
+    <title>Software Testing - Yvonne Li</title>
     
     <!-- Preload critical assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -31,7 +31,7 @@
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Introduction to Software Testing - Yvonne Li">
+    <meta property="og:title" content="Software Testing - Yvonne Li">
     <meta property="og:description" content="Hello Travellers!
 ">
     <meta property="og:image" content="http://localhost:4000/assets/images/yli.png">
@@ -39,7 +39,7 @@
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Introduction to Software Testing - Yvonne Li">
+    <meta name="twitter:title" content="Software Testing - Yvonne Li">
     <meta name="twitter:description" content="Hello Travellers!
 ">
     <meta name="twitter:image" content="http://localhost:4000/assets/images/yli.png">
@@ -78,7 +78,7 @@
             <ul>
                 <li><a href="/" >Home</a></li>
                 <li><a href="/about" >About</a></li>
-                <li><a href="/cv" >CV</a></li>
+          <!--       <li><a href="/cv" >CV</a></li> -->
                 <li>
                     <a 
                         href="mailto:yvonneli.dev@gmail.com" 
@@ -108,12 +108,11 @@
 
     <main id="main" class="container" tabindex="-1">
         <article class="post">
-    <h1>Introduction to Software Testing</h1>
-    <p class="meta">Published on May 22, 2025</p>
+    <h1>Software Testing</h1>
+    <p class="meta">May 22, 2025</p>
 
     <div class="post-content">
-        <p>20250522 2056
-Status: #review  #knowledge 
+        <p>Status: #review  #knowledge <br />
 Tags: #SAT #testing #softwaredev</p>
 
 <h1 id="cs6340-sat---introduction-to-software-testing">CS6340 SAT - Introduction to Software Testing</h1>
@@ -211,9 +210,12 @@ A post-condition is a predicate expected to hold after a function executes whene
 
 <p>pre- and post-condition can be considered as a special case of assertions, which we saw in the first lesson</p>
 <h4 id="condition-example">Condition Example</h4>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-02.png" alt="Description" />
+  <figcaption>Testing Approaches Matrix</figcaption>
+</figure>
 
-<p>![[Pasted image 20250525164448.png]]
-This code defines a generic Stack class template with a single method. Let me break it down:
+<p>This code defines a generic Stack class template with a single method. Let me break it down:
 <strong>Class Structure:</strong></p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">class Stack&lt;T&gt;</code> - This is a template class where <code class="language-plaintext highlighter-rouge">T</code> is a placeholder for any data type</li>
@@ -282,14 +284,20 @@ Assertions are runtime checks that verify these contracts:</p>
       <li>may become more complex than the code</li>
       <li>but useful even if they do not cover every situation
         <h4 id="process-of-using-pre--and-post-conditions">Process of using Pre- and post-conditions</h4>
-        <p>![[Pasted image 20250525175157.png]]
-this framework doesn’t help write tests, but help with automating testing runs</p>
       </li>
     </ul>
   </li>
 </ul>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-03.png" alt="Description" />
+  <figcaption>Pre- and Post-Condition</figcaption>
+</figure>
+<p>this framework doesn’t help write tests, but help with automating testing runs</p>
 
-<p>![[Pasted image 20250525180943.png]]</p>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-04.png" alt="Description" />
+  <figcaption>Executable Post-conditions</figcaption>
+</figure>
 
 <h3 id="how-good-is-your-test-suit">How good is your test suit?</h3>
 <ul>

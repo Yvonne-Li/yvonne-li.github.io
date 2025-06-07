@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // API URLs to try (in order of preference)
     const API_URLS = [
-        'https://prj_P0Zl17aKZyuKSlB8FhF9V68ti7td.app/api/puns',  // Your free endpoint
+        'https://yvonne-pun-api.vercel.app/api/pun',  // Your free endpoint
         'https://yvonne-pun-api.vercel.app/api/chat',  // Your OpenAI endpoint
         'http://localhost:5001/chat'  // Alternative port
     ];

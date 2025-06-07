@@ -11,7 +11,7 @@ show_title: false
 ## Welcome Travellers!
 
 Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on
-
+Tell me a joke about something:
 <div class="search-section">
 <input
 type="text"

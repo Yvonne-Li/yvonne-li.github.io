@@ -11,6 +11,7 @@
 │   └── post.html
 ├── _posts
 │   ├── 2024-10-20-conda-vs-venv.md
+│   ├── 2025-02-24-Threads and Concurrency.md
 │   ├── 2025-05-22-Introduction to Software Testing.md
 │   └── 2025-06-07-LLVM-IR-Iteration.md
 ├── _site
@@ -19,6 +20,9 @@
 │   │       └── 20
 │   │           └── conda-vs-venv.html
 │   ├── 2025
+│   │   ├── 02
+│   │   │   └── 24
+│   │   │       └── Threads-and-Concurrency.html
 │   │   ├── 05
 │   │   │   └── 22
 │   │   │       └── Introduction-to-Software-Testing.html
@@ -26,26 +30,29 @@
 │   │       └── 07
 │   │           └── LLVM-IR-Iteration.html
 │   ├── 404.html
-│   ├── README.md
+│   ├── Gemfile
 │   ├── about
 │   │   └── index.html
 │   ├── assets
 │   │   ├── css
-│   │   │   └── main.css
+│   │   │   ├── main.css
+│   │   │   └── style.css
 │   │   ├── images
 │   │   │   ├── posts
 │   │   │   │   ├── 2025-05-22-01.png
 │   │   │   │   ├── 2025-05-22-02.png
 │   │   │   │   ├── 2025-05-22-03.png
-│   │   │   │   └── 2025-05-22-04.png
+│   │   │   │   ├── 2025-05-22-04.png
+│   │   │   │   └── Hugo-1.jpeg
 │   │   │   └── yli.png
-│   │   ├── js
-│   │   │   └── puns.js
-│   │   ├── main.css
-│   │   └── minima-social-icons.svg
+│   │   └── js
+│   │       └── puns.js
 │   ├── cleanup.sh
 │   ├── feed.xml
 │   ├── index.html
+│   ├── posts
+│   │   └── index.html
+│   ├── project_structure.txt
 │   └── site.webmanifest
 ├── about.markdown
 ├── assets
@@ -56,13 +63,15 @@
 │   │   │   ├── 2025-05-22-01.png
 │   │   │   ├── 2025-05-22-02.png
 │   │   │   ├── 2025-05-22-03.png
-│   │   │   └── 2025-05-22-04.png
+│   │   │   ├── 2025-05-22-04.png
+│   │   │   └── Hugo-1.jpeg
 │   │   └── yli.png
 │   └── js
 │       └── puns.js
 ├── cleanup.sh
 ├── index.markdown
+├── posts.markdown
 ├── project_structure.txt
 └── site.webmanifest
 
-23 directories, 43 files
+26 directories, 49 files

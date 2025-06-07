@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello Travellers!
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' http://localhost:5000 https://localhost:5000; connect-src 'self' http://localhost:5001 https://localhost:5001; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    
+    <title>Home - Yvonne Li</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/yli.png">
+    <link rel="apple-touch-icon" href="/assets/images/yli.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Home - Yvonne Li">
+    <meta property="og:description" content="Hello Travellers!
+">
+    <meta property="og:image" content="http://localhost:4000/assets/images/yli.png">
+    <meta property="og:url" content="http://localhost:4000/">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Home - Yvonne Li">
+    <meta name="twitter:description" content="Hello Travellers!
+">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/yli.png">
+
+    <!-- JSON-LD for better SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yvonne Li",
+        "url": "http://localhost:4000",
+        "image": "http://localhost:4000/assets/images/yli.png",
+        "sameAs": [
+            "https://www.linkedin.com/in/yvonneli-yli/",
+            "https://github.com/yvonne-li"
+        ],
+        "jobTitle": "Data Analytics Professional"
+    }
+    </script>
+
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="header-container">
+        <img 
+            src="/assets/images/yli.png" 
+            alt="Yvonne Li" 
+            class="profile-image"
+            width="25" 
+            height="25"
+            loading="eager"
+        >
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="/" class="active" aria-current="page">Home</a></li>
+                <li><a href="/about" >About</a></li>
+                <li><a href="/cv" >CV</a></li>
+                <li>
+                    <a 
+                        href="mailto:yvonneli.dev@gmail.com" 
+                        aria-label="Send email to Yvonne Li"
+                        title="Email me"
+                    >📧</a>
+                </li>
+                <li>
+                    <a 
+                        href="https://github.com/yvonne-li" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Visit Yvonne Li's GitHub profile"
+                    >Github</a>
+                </li>
+                <li>
+                    <a 
+                        href="https://www.linkedin.com/in/yvonneli-yli/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Visit Yvonne Li's LinkedIn profile"
+                    >LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+        <div class="split-container">
+
+  <div class="intro-section">
+
+    <h2 id="welcome-travellers">Welcome Travellers!</h2>
+
+    <p>Hi, I’m Yvonne Li. Here, you can check out what I’m currently working on</p>
+
+    <div class="search-section">
+<input type="text" id="search-input" placeholder="Enter a topic for puns..." class="search-input" />
+<button id="search-button" class="search-button">Generate Puns</button>
+<div id="loading" class="loading-indicator">Loading...</div>
+</div>
+
+    <div id="response-container" class="response-container"></div>
+
+  </div>
+
+  <div class="blog-section">
+
+    <h2 id="latest-posts">Latest Posts</h2>
+
+    <ul class="posts">
+
+<li class="post-item">
+<div class="post-meta">
+<span>22 May 2025</span>
+</div>
+<a href="/2025/05/22/Introduction-to-Software-Testing.html" title="Introduction to Software Testing" class="post-link">Introduction to Software Testing</a>
+
+<p class="post-excerpt">CS6340 SAT - Introduction to Software Testing</p>
+<a href="/2025/05/22/Introduction-to-Software-Testing.html" class="read-more">Read more →</a>
+
+</li>
+
+<li class="post-item">
+<div class="post-meta">
+<span>20 Oct 2024</span>
+</div>
+<a href="/2024/10/20/conda-vs-venv.html" title="conda vs venv" class="post-link">conda vs venv</a>
+
+<p class="post-excerpt">how to use conda or venv</p>
+<a href="/2024/10/20/conda-vs-venv.html" class="read-more">Read more →</a>
+
+</li>
+
+</ul>
+
+  </div>
+
+</div>
+
+<script src="/assets/js/puns.js"></script>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Yvonne Li. All rights reserved.</p>
+    </footer>
+
+    <!-- Chat script -->
+    <script src="/assets/js/chat.js" defer></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hello Travellers!
+">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' http://localhost:5000 https://localhost:5000; connect-src 'self' http://localhost:5001 https://localhost:5001; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+    
+    <title>Introduction to Software Testing - Yvonne Li</title>
+    
+    <!-- Preload critical assets -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="/assets/css/main.css" as="style">
+    
+    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/assets/images/yli.png">
+    <link rel="apple-touch-icon" href="/assets/images/yli.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Introduction to Software Testing - Yvonne Li">
+    <meta property="og:description" content="Hello Travellers!
+">
+    <meta property="og:image" content="http://localhost:4000/assets/images/yli.png">
+    <meta property="og:url" content="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Introduction to Software Testing - Yvonne Li">
+    <meta name="twitter:description" content="Hello Travellers!
+">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/yli.png">
+
+    <!-- JSON-LD for better SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Yvonne Li",
+        "url": "http://localhost:4000",
+        "image": "http://localhost:4000/assets/images/yli.png",
+        "sameAs": [
+            "https://www.linkedin.com/in/yvonneli-yli/",
+            "https://github.com/yvonne-li"
+        ],
+        "jobTitle": "Data Analytics Professional"
+    }
+    </script>
+
+</head>
+<body>
+    <!-- Skip link for accessibility -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <header class="header-container">
+        <img 
+            src="/assets/images/yli.png" 
+            alt="Yvonne Li" 
+            class="profile-image"
+            width="25" 
+            height="25"
+            loading="eager"
+        >
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="/" >Home</a></li>
+                <li><a href="/about" >About</a></li>
+                <li><a href="/cv" >CV</a></li>
+                <li>
+                    <a 
+                        href="mailto:yvonneli.dev@gmail.com" 
+                        aria-label="Send email to Yvonne Li"
+                        title="Email me"
+                    >📧</a>
+                </li>
+                <li>
+                    <a 
+                        href="https://github.com/yvonne-li" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Visit Yvonne Li's GitHub profile"
+                    >Github</a>
+                </li>
+                <li>
+                    <a 
+                        href="https://www.linkedin.com/in/yvonneli-yli/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        aria-label="Visit Yvonne Li's LinkedIn profile"
+                    >LinkedIn</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="container" tabindex="-1">
+        <article class="post">
+    <h1>Introduction to Software Testing</h1>
+    <p class="meta">Published on May 22, 2025</p>
+
+    <div class="post-content">
+        <p>20250522 2056
+Status: #review  #knowledge 
+Tags: #SAT #testing #softwaredev</p>
+
+<h1 id="cs6340-sat---introduction-to-software-testing">CS6340 SAT - Introduction to Software Testing</h1>
+<h2 id="observations">Observations</h2>
+<h3 id="the-need-for-specifications">the need for specifications</h3>
+<ul>
+  <li>testing checks whether program implementation agrees with program specification</li>
+  <li>without a specification, there’s nothing to test</li>
+  <li>testing a form of consistency checking between implementation and specification
+    <ul>
+      <li>recurring theme for software quality checking approaches</li>
+      <li>what if implementation and specification are wrong?
+        <h3 id="developer-tester">developer !=Tester</h3>
+      </li>
+    </ul>
+  </li>
+  <li>developer writes implementation, tester writes specification</li>
+  <li>unlikely that both will independently make the same mistake</li>
+  <li>Specifications useful even if written by developer itself
+    <ul>
+      <li>much simpler than implementation</li>
+      <li>specification unlikely to have same mistake as implementation
+        <h3 id="other-observations">Other observations</h3>
+      </li>
+    </ul>
+  </li>
+  <li>resources are finite
+    <ul>
+      <li>limit how many tests are written</li>
+      <li>specifications evolve over time
+        <ul>
+          <li>tests must be updated over time</li>
+        </ul>
+      </li>
+      <li>an idea: automated testing
+        <h3 id="landscape-of-testing">Landscape of Testing</h3>
+        <h4 id="specifications">Specifications</h4>
+      </li>
+    </ul>
+  </li>
+  <li>Pre- and Post-conditions
+    <h4 id="measuring-test-suite-quality">Measuring Test Suite Quality</h4>
+  </li>
+  <li>Coverage Metrics</li>
+  <li>Mutation Analysis
+    <h4 id="classification-of-testing-approaches">Classification of Testing Approaches</h4>
+  </li>
+</ul>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-01.png" alt="Description" />
+  <figcaption>Testing Approaches Matrix</figcaption>
+</figure>
+<ul>
+  <li><strong>Manual vs Automated</strong> based on human participation, if the software require more human interaction =&gt; more manual testing</li>
+  <li><strong>black-box:</strong> tester can see nothing about the tested program internal mechanisms. Testers can only issue inputs to the program, observe program outputs and determine whether the observed outputs meet the specifications required.</li>
+  <li><strong>White-box</strong> refers to testing in which the internal details of the program being tested are fully available to the tester. The tester can use these internal details to perform a more precise analysis of the tested program and uncover inputs that are more likely to trigger buggy behavior.</li>
+  <li><strong>Gray box approaches:</strong> testing behaviors need to not be strictly black box or white box.</li>
+  <li>feedback directed random testing</li>
+  <li>symbolic execution that needs to inspect source code</li>
+  <li>dynamic analysis in order to discover future tests</li>
+</ul>
+
+<h3 id="automated-vs-manual-testing">Automated vs Manual Testing</h3>
+<p>Automated Testing:</p>
+<ul>
+  <li>find bugs more quickly</li>
+  <li>no need to write tests</li>
+  <li>if software changes, no need to maintain tests
+Manual Testing</li>
+  <li>efficient test suite</li>
+  <li>potentially better coverage</li>
+</ul>
+
+<h3 id="black-box-vs-white-box-testing">Black-box vs white-box testing</h3>
+<p>Black-box testing:</p>
+<ul>
+  <li>can work with code that cannot be modified</li>
+  <li>doesn’t need to analyze or study code</li>
+  <li>code can be in any format (managed, binary, obfuscated)
+White-box</li>
+  <li>efficient test suite</li>
+  <li>potentially better coverage</li>
+</ul>
+
+<h3 id="automated-testing-problem">Automated testing problem</h3>
+<ul>
+  <li>automated testing is hard to do</li>
+  <li>probably impossible for entire systems</li>
+  <li>certainly impossible without specifications
+    <h3 id="pre--and-post-conditions">Pre- and post-conditions</h3>
+    <p>A pre-condition is a predicate assumed to hold before a function executes, one use of it is to ensure that a function does not operate in an undefined way on inputs that it was not designed to handle.
+A post-condition is a predicate expected to hold after a function executes whenever the pre-condition also holds, one use of it is to ensure that a function’s output matches its specification (i.e. a function that squares a real number should not output a negative number).</p>
+  </li>
+</ul>
+
+<p>pre- and post-condition can be considered as a special case of assertions, which we saw in the first lesson</p>
+<h4 id="condition-example">Condition Example</h4>
+
+<p>![[Pasted image 20250525164448.png]]
+This code defines a generic Stack class template with a single method. Let me break it down:
+<strong>Class Structure:</strong></p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">class Stack&lt;T&gt;</code> - This is a template class where <code class="language-plaintext highlighter-rouge">T</code> is a placeholder for any data type</li>
+  <li><code class="language-plaintext highlighter-rouge">T[] array</code> - An array that stores elements of type <code class="language-plaintext highlighter-rouge">T</code></li>
+  <li><code class="language-plaintext highlighter-rouge">int size</code> - Tracks the current number of elements in the stack</li>
+  <li><code class="language-plaintext highlighter-rouge">pop()</code> is a <strong>stack operation</strong> that removes and returns the top element from the stack.</li>
+</ul>
+
+<p><strong>The pop() method:</strong></p>
+<ul>
+  <li><strong>Precondition:</strong> <code class="language-plaintext highlighter-rouge">s.size() &gt; 0</code> - The stack must not be empty before calling pop</li>
+  <li><strong>Implementation:</strong> <code class="language-plaintext highlighter-rouge">return array[--size];</code> - This decrements the size counter and returns the element at that position</li>
+  <li><strong>Postcondition:</strong> <code class="language-plaintext highlighter-rouge">s'.size() == s.size() - 1</code> - After the operation, the new size is one less than the original size</li>
+</ul>
+
+<p><strong>How it works:</strong> The <code class="language-plaintext highlighter-rouge">--size</code> is key here - it’s pre-decrement, so if the stack originally has 3 elements (size = 3), calling pop() will:</p>
+<ol>
+  <li>Decrement size from 3 to 2</li>
+  <li>Return <code class="language-plaintext highlighter-rouge">array[2]</code> (the top element, since array indices are 0-based)</li>
+</ol>
+
+<p><strong>The size() method:</strong> Simply returns the current value of the <code class="language-plaintext highlighter-rouge">size</code> variable.</p>
+
+<p><strong>Preconditions and Postconditions</strong> are formal specifications that define what must be true before and after a method executes. They’re part of <strong>Design by Contract</strong>, a programming methodology that treats software components like legal contracts.</p>
+
+<p><strong>Preconditions</strong></p>
+<ul>
+  <li><strong>What:</strong> Conditions that must be true when a method is called</li>
+  <li><strong>Who’s responsible:</strong> The caller must ensure these are met</li>
+  <li><strong>Purpose:</strong> Define valid inputs and system states</li>
+</ul>
+
+<p><strong>Postconditions</strong></p>
+<ul>
+  <li><strong>What:</strong> Conditions guaranteed to be true when a method returns successfully</li>
+  <li><strong>Who’s responsible:</strong> The method implementation must ensure these hold</li>
+  <li><strong>Purpose:</strong> Define what the method promises to deliver</li>
+</ul>
+
+<p><strong>How They Work with Assertions</strong>
+Assertions are runtime checks that verify these contracts:</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">public</span> <span class="no">T</span> <span class="nf">pop</span><span class="o">()</span> <span class="o">{</span>
+    <span class="c1">// Precondition assertion</span>
+    <span class="k">assert</span> <span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">:</span> <span class="s">"Stack is empty - cannot pop"</span><span class="o">;</span>
+    
+    <span class="no">T</span> <span class="n">result</span> <span class="o">=</span> <span class="n">array</span><span class="o">[--</span><span class="n">size</span><span class="o">];</span>
+    
+    <span class="c1">// Postcondition assertion  </span>
+    <span class="k">assert</span> <span class="n">size</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">:</span> <span class="s">"Size became negative after pop"</span><span class="o">;</span>
+    
+    <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="more">More..</h4>
+<p>Pre- and post-conditions</p>
+<ul>
+  <li>Most useful if they are executable
+    <ul>
+      <li>written in the programming language itself</li>
+      <li>a special case of assertions</li>
+    </ul>
+  </li>
+  <li>Need not be precise
+    <ul>
+      <li>may become more complex than the code</li>
+      <li>but useful even if they do not cover every situation
+        <h4 id="process-of-using-pre--and-post-conditions">Process of using Pre- and post-conditions</h4>
+        <p>![[Pasted image 20250525175157.png]]
+this framework doesn’t help write tests, but help with automating testing runs</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>![[Pasted image 20250525180943.png]]</p>
+
+<h3 id="how-good-is-your-test-suit">How good is your test suit?</h3>
+<ul>
+  <li>how do we know that our test suite is good?
+    <ul>
+      <li>too few tests: may miss bugs</li>
+      <li>too many tests.: costly to run, bloat and redundancy, harder to maintain</li>
+    </ul>
+  </li>
+  <li>two approaches
+    <ul>
+      <li>code coverage metrics</li>
+      <li>mutation analysis (or mutation testing)
+        <h4 id="code-coverage">Code coverage</h4>
+      </li>
+    </ul>
+  </li>
+  <li>Metric to quantify extent to which a program’s code is tested by a given test suite</li>
+  <li>Given as percentage of some aspect of the program executed in the tests</li>
+  <li>Function coverage: fucntions called</li>
+  <li>statement coverage: statements executed</li>
+  <li>branch coverage: branches taken</li>
+  <li>
+    <h4 id="mutation-analysis">Mutation Analysis</h4>
+  </li>
+</ul>
+
+<hr />
+
+<h1 id="references">References</h1>
+
+    </div>
+
+    <div class="post-navigation">
+        
+        <a class="prev" href="/2024/10/20/conda-vs-venv.html">&laquo; conda vs venv</a>
+        
+        
+    </div>
+</article>
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2025 Yvonne Li. All rights reserved.</p>
+    </footer>
+
+    <!-- Chat script -->
+    <script src="/assets/js/chat.js" defer></script>
+
+    
+</body>
+</html>

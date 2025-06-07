@@ -6,13 +6,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // API URLs to try (in order of preference)
     const API_URLS = [
-        'https://yvonne-pun-api.vercel.app/api/pun',  // Your free endpoint
+        'https://yvonne-pun-api.vercel.app/api/puns',  // Your free endpoint
         'https://yvonne-pun-api.vercel.app/api/chat',  // Your OpenAI endpoint
         'http://localhost:5001/chat'  // Alternative port
     ];
 
     // Sample puns for fallback
     const samplePuns = {
+        'code': [
+            "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
+            "How many programmers does it take to change a light bulb? None, that's a hardware problem! 💡",
+            "Why do Java developers wear glasses? Because they don't C#! 👓",
+            "I told my code a joke about arrays, but it didn't get the index! 📝",
+            "Debugging is like being a detective in a crime movie where you're also the murderer! 🔍"
+        ],
         'programming': [
             "Why do programmers prefer dark mode? Because light attracts bugs! 🐛",
             "How many programmers does it take to change a light bulb? None, that's a hardware problem! 💡",
@@ -69,18 +76,24 @@ document.addEventListener('DOMContentLoaded', function() {
         for (const apiUrl of API_URLS) {
             try {
                 console.log(`Trying API: ${apiUrl}`);
+
+                // Create abort controller and timeout
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 5000);
+
                 const response = await fetch(apiUrl, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: `Generate puns about ${topic}` }),
-                    timeout: 5000 // 5 second timeout
+                    signal: controller.signal
                 });
+
+                clearTimeout(timeoutId); // Stop the timeout if request completed
 
                 if (response.ok) {
                     const data = await response.json();
-                    displayPuns(data.response);
+                    const cleaned = data.response.trim();
+                    displayPuns(cleaned.includes('\n') ? cleaned : `${cleaned}\n`);
                     punsGenerated = true;
                     console.log(`Success with API: ${apiUrl}`);
                     break;
@@ -90,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 continue; // Try next API
             }
         }
+
 
         // If all APIs failed, use sample puns
         if (!punsGenerated) {

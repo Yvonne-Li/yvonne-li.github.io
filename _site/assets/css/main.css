@@ -437,13 +437,17 @@ pre::-webkit-scrollbar-track {
         gap: 8px;
     }
 
+    /* Keep navigation horizontal on mobile */
     nav ul {
-        flex-direction: column;
+        flex-direction: row; /* Changed from column */
         align-items: center;
+        flex-wrap: wrap; /* Allow wrapping if needed */
+        justify-content: center;
+        gap: 10px; /* Smaller gap for mobile */
     }
 
     nav ul li {
-        margin-bottom: 8px;
+        margin-bottom: 0; /* Remove vertical margin */
         margin-right: 0;
     }
 
@@ -463,20 +467,6 @@ pre::-webkit-scrollbar-track {
 
     .response-container {
         padding: 12px;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .chat-container {
-        width: 90%;
-        right: 5%;
-        left: 5%;
-        bottom: 70px;
-    }
-
-    .chat-button {
-        right: 10px;
-        bottom: 10px;
     }
 }
 

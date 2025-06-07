@@ -224,9 +224,9 @@ strong {
 
 .posts li {
     position: relative;
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 8px;
+    padding: 10px 15px; /* Reduced from 15px */
+    margin: 8px 0; /* Reduced from 15px */
+    border-radius: 6px;
     transition: all 0.2s ease;
     border-bottom: 1px solid var(--border-color);
 }
@@ -240,48 +240,62 @@ strong {
     background-color: var(--background-hover);
 }
 
+
 /* Post metadata styling */
 .post-meta {
     display: flex;
     align-items: center;
     gap: 8px;
-    margin-bottom: 6px;
+    margin-bottom: 4px; /* Reduced from 6px */
 }
 
 .posts span {
     color: var(--text-muted);
     font-family: var(--mono-font);
-    font-size: 0.85em;
+    font-size: 0.8em; /* Slightly smaller */
 }
 
+/* Post title and excerpt container */
+.post-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 4px 0; /* Reduced spacing */
+}
+
+/* Excerpt styling */
 .posts a {
-    display: block;
-    margin: 6px 0;
-    font-size: 1.3em;
+    flex: 0 0 auto; /* Don't allow title to shrink */
+    font-size: 1.2em; /* Slightly smaller than 1.3em */
     font-family: var(--heading-font);
     font-weight: 500;
     color: var(--text-primary);
     text-decoration: none;
     transition: color 0.2s ease;
+    margin: 0; /* Remove default margin */
 }
 
 .posts a:hover {
     color: var(--link-hover);
 }
 
-/* Excerpt styling */
+/* Excerpt styling - now inline */
 .post-excerpt {
+    flex: 1; /* Take remaining space */
     font-family: var(--body-font);
-    font-size: 0.95em;
-    line-height: 1.6;
+    font-size: 0.85em; /* Smaller font */
+    line-height: 1.4;
     color: var(--text-secondary);
-    margin-top: 8px;
-    max-width: 90ch;
     font-style: italic;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
+    text-align: right; /* Align to right */
+    margin: 0;
+    
+    /* Truncate long excerpts */
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 300px; /* Limit width */
 }
 
 /* Code block styling */
@@ -365,10 +379,11 @@ pre::-webkit-scrollbar-track {
 }
 
 /* Responsive Design */
-@media screen and (max-width: 800px) {
-    .split-container {
+@media screen and (max-width: 768px) {
+    .post-title-container {
         flex-direction: column;
-        gap: 20px;
+        align-items: flex-start;
+        gap: 4px;
     }
 
     .intro-section {
@@ -389,6 +404,23 @@ pre::-webkit-scrollbar-track {
         min-width: 150px;
         display: block;
         margin: 0 auto;
+    }
+    .post-excerpt {
+        text-align: left;
+        max-width: 100%;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+        line-height: 1.3;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        display: -webkit-box;
+        overflow: hidden;
+    }
+    
+    .posts li {
+        padding: 8px 12px;
+        margin: 6px 0;
     }
 }
 

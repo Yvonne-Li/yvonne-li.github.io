@@ -5,13 +5,17 @@ show_title: false
 ---
 
 <ul class="posts">
-    {% for post in site.posts limit:2 %}
+    {% for post in site.posts limit:4 %}
     <li>
-        <span>{{ post.date | date_to_string }}</span> » 
-        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
-        {% if post.custom_excerpt %}
-            <p>{{ post.custom_excerpt }}</p>
-        {% endif %}
+        <div class="post-meta">
+            <span>{{ post.date | date_to_string }}</span>
+        </div>
+        <div class="post-title-container">
+            <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+            {% if post.custom_excerpt %}
+                <p class="post-excerpt">{{ post.custom_excerpt }}</p>
+            {% endif %}
+        </div>
     </li>
     {% endfor %}
 </ul>

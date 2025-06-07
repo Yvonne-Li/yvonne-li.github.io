@@ -22,7 +22,9 @@ lang: en_US
 timezone: America/Toronto # adjust this to your timezone
 
 # Build settings
-theme: minima
+# theme: minima
+markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-feed
 
@@ -37,7 +39,6 @@ plugins:
 exclude:
   - website/bundle/
   - vendor/
-  - Gemfile
   - Gemfile.lock
   - node_modules/
   - README.md

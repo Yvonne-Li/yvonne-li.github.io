@@ -8,7 +8,7 @@ permalink: /about/
     <div class="about-text">
         <h2> </h2>
         <ul>
-        I'm Yvonne, 📍 Toronto, ON, love RedNote, tennis, hiking, & (over-)thinking🤔, have a cat called Hugo.
+        I'm Yvonne, 📍 Toronto, ON, love RedNote, tennis, hiking, travelling,& have a cat called Hugo.
             <li>📊 working with loyalty and marketing data at bank </li>
             <li>📺 watching: Adolescence </li>
             <li>📖 reading: The Beginning of Infinity∞, Approaching (Almost) Any Machine Learning Problem </li>

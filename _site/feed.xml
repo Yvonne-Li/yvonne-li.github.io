@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-06T14:24:15-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
-</subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">Introduction to Software Testing</title><link href="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html" rel="alternate" type="text/html" title="Introduction to Software Testing" /><published>2025-05-22T00:00:00-04:00</published><updated>2025-05-22T00:00:00-04:00</updated><id>http://localhost:4000/2025/05/22/Introduction%20to%20Software%20Testing</id><content type="html" xml:base="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html"><![CDATA[<p>20250522 2056
-Status: #review  #knowledge 
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-06T22:07:42-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
+</subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">Software Testing</title><link href="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html" rel="alternate" type="text/html" title="Software Testing" /><published>2025-05-22T00:00:00-04:00</published><updated>2025-05-22T00:00:00-04:00</updated><id>http://localhost:4000/2025/05/22/Introduction%20to%20Software%20Testing</id><content type="html" xml:base="http://localhost:4000/2025/05/22/Introduction-to-Software-Testing.html"><![CDATA[<p>Status: #review  #knowledge <br />
 Tags: #SAT #testing #softwaredev</p>
 
 <h1 id="cs6340-sat---introduction-to-software-testing">CS6340 SAT - Introduction to Software Testing</h1>
@@ -98,9 +97,12 @@ A post-condition is a predicate expected to hold after a function executes whene
 
 <p>pre- and post-condition can be considered as a special case of assertions, which we saw in the first lesson</p>
 <h4 id="condition-example">Condition Example</h4>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-02.png" alt="Description" />
+  <figcaption>Testing Approaches Matrix</figcaption>
+</figure>
 
-<p>![[Pasted image 20250525164448.png]]
-This code defines a generic Stack class template with a single method. Let me break it down:
+<p>This code defines a generic Stack class template with a single method. Let me break it down:
 <strong>Class Structure:</strong></p>
 <ul>
   <li><code class="language-plaintext highlighter-rouge">class Stack&lt;T&gt;</code> - This is a template class where <code class="language-plaintext highlighter-rouge">T</code> is a placeholder for any data type</li>
@@ -169,14 +171,20 @@ Assertions are runtime checks that verify these contracts:</p>
       <li>may become more complex than the code</li>
       <li>but useful even if they do not cover every situation
         <h4 id="process-of-using-pre--and-post-conditions">Process of using Pre- and post-conditions</h4>
-        <p>![[Pasted image 20250525175157.png]]
-this framework doesn’t help write tests, but help with automating testing runs</p>
       </li>
     </ul>
   </li>
 </ul>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-03.png" alt="Description" />
+  <figcaption>Pre- and Post-Condition</figcaption>
+</figure>
+<p>this framework doesn’t help write tests, but help with automating testing runs</p>
 
-<p>![[Pasted image 20250525180943.png]]</p>
+<figure>
+  <img src="/assets/images/posts/2025-05-22-04.png" alt="Description" />
+  <figcaption>Executable Post-conditions</figcaption>
+</figure>
 
 <h3 id="how-good-is-your-test-suit">How good is your test suit?</h3>
 <ul>
@@ -206,7 +214,7 @@ this framework doesn’t help write tests, but help with automating testing runs
 
 <hr />
 
-<h1 id="references">References</h1>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[20250522 2056 Status: #review #knowledge Tags: #SAT #testing #softwaredev]]></summary></entry><entry><title type="html">conda vs venv</title><link href="http://localhost:4000/2024/10/20/conda-vs-venv.html" rel="alternate" type="text/html" title="conda vs venv" /><published>2024-10-20T00:00:00-04:00</published><updated>2024-10-20T00:00:00-04:00</updated><id>http://localhost:4000/2024/10/20/conda-vs-venv</id><content type="html" xml:base="http://localhost:4000/2024/10/20/conda-vs-venv.html"><![CDATA[<p>conda needs a environment.yaml file to determine the packages needed</p>
+<h1 id="references">References</h1>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[Status: #review #knowledge Tags: #SAT #testing #softwaredev]]></summary></entry><entry><title type="html">conda vs venv</title><link href="http://localhost:4000/2024/10/20/conda-vs-venv.html" rel="alternate" type="text/html" title="conda vs venv" /><published>2024-10-20T00:00:00-04:00</published><updated>2024-10-20T00:00:00-04:00</updated><id>http://localhost:4000/2024/10/20/conda-vs-venv</id><content type="html" xml:base="http://localhost:4000/2024/10/20/conda-vs-venv.html"><![CDATA[<p>conda needs a environment.yaml file to determine the packages needed</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv .venv
 <span class="nb">source </span>myvenv/bin/activate

@@ -1,13 +1,11 @@
 ---
 layout: post
-title: "Introduction to Software Testing"
+title: "Software Testing"
 date: 2025-05-22
 custom_excerpt: "CS6340 SAT - Introduction to Software Testing"
-
 ---
 
-20250522 2056
-Status: #review  #knowledge 
+Status: #review  #knowledge \
 Tags: #SAT #testing #softwaredev
 
 # CS6340 SAT - Introduction to Software Testing
@@ -77,8 +75,11 @@ A post-condition is a predicate expected to hold after a function executes whene
 
 pre- and post-condition can be considered as a special case of assertions, which we saw in the first lesson
 #### Condition Example
+<figure>
+  <img src="{{ site.baseurl }}/assets/images/posts/2025-05-22-02.png" alt="Description">
+  <figcaption>Testing Approaches Matrix</figcaption>
+</figure>
 
-![[Pasted image 20250525164448.png]]
 This code defines a generic Stack class template with a single method. Let me break it down:
 **Class Structure:**
 - `class Stack<T>` - This is a template class where `T` is a placeholder for any data type
@@ -134,11 +135,16 @@ Pre- and post-conditions
 	-  may become more complex than the code
 	- but useful even if they do not cover every situation
 #### Process of using Pre- and post-conditions 
-![[Pasted image 20250525175157.png]]
+<figure>
+  <img src="{{ site.baseurl }}/assets/images/posts/2025-05-22-03.png" alt="Description">
+  <figcaption>Pre- and Post-Condition</figcaption>
+</figure>
 this framework doesn't help write tests, but help with automating testing runs
 
-
-![[Pasted image 20250525180943.png]]
+<figure>
+  <img src="{{ site.baseurl }}/assets/images/posts/2025-05-22-04.png" alt="Description">
+  <figcaption>Executable Post-conditions</figcaption>
+</figure>
 
 
 ### How good is your test suit?

@@ -10,7 +10,8 @@ show_title: false
 
 ## Welcome Travellers!
 
-Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on
+Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on\
+<h4 class="joke-header">Tell me a joke about something:</h4>
 
 <div class="search-section">
 <input

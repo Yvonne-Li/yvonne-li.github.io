@@ -2,7 +2,7 @@
 layout: post
 title: "Introduction to Software Testing"
 date: 2025-05-22
-custom_excerpt: "CS6430 SAT - Introduction to Software Testing"
+custom_excerpt: "CS6340 SAT - Introduction to Software Testing"
 
 ---
 
@@ -37,8 +37,10 @@ Tags: #SAT #testing #softwaredev
 - Coverage Metrics
 - Mutation Analysis
 #### Classification of Testing Approaches
-![[Pasted image 20250525135012.png]]
-
+<figure>
+  <img src="{{ site.baseurl }}/assets/images/posts/2025-05-22-01.png" alt="Description">
+  <figcaption>Testing Approaches Matrix</figcaption>
+</figure>
 - **Manual vs Automated** based on human participation, if the software require more human interaction => more manual testing
 - **black-box:** tester can see nothing about the tested program internal mechanisms. Testers can only issue inputs to the program, observe program outputs and determine whether the observed outputs meet the specifications required. 
 - **White-box** refers to testing in which the internal details of the program being tested are fully available to the tester. The tester can use these internal details to perform a more precise analysis of the tested program and uncover inputs that are more likely to trigger buggy behavior. 

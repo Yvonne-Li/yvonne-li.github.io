@@ -1,5 +1,4 @@
 run following to see the website locally
-
 ```bash
 bundle exec jekyll serve
 ```
@@ -19,12 +18,20 @@ git add Gemfile.lock .gitignore
 git commit -m "Add Gemfile.lock for GitHub Pages"
 git push
 ```
-TRY IT OUT
+
+TRY OPENAI API OUT
 ```Bash
 curl -X POST https://yvonne-pun-api.vercel.app/api/chat \
   -H "Content-Type: application/json" \
   -d '{"message": "Tell me puns about cats"}'
 ```
+
+Create Project structure txt file
 ```bash
 tree -I 'node_modules|.git|dist|build' > project_structure.txt
+```
+
+push to repo
+```bash
+git push origin master
 ```

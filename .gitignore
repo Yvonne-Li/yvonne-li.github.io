@@ -2,3 +2,4 @@ exclude:
   - vendor/
   - Gemfile
   - Gemfile.lock
+  - cleanup.sh

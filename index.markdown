@@ -44,17 +44,16 @@ class="response-container"
 <div class="post-meta">
 <span>{{ post.date | date_to_string }}</span>
 </div>
+<div class="post-title-container">
 <a href="{{ post.url | relative_url }}" title="{{ post.title }}" class="post-link">{{ post.title }}</a>
 {% if post.custom_excerpt %}
 <p class="post-excerpt">{{ post.custom_excerpt }}</p>
-<a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
 {% endif %}
+</div>
 </li>
 {% endfor %}
 </ul>
-
 </div>
-
 </div>
 
 <script src="/assets/js/puns.js"></script>

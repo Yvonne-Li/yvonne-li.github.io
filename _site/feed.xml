@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-07T13:52:12-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-07T14:11:35-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
 </subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">LLVM IR Iteration</title><link href="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html" rel="alternate" type="text/html" title="LLVM IR Iteration" /><published>2025-06-07T00:00:00-04:00</published><updated>2025-06-07T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/07/LLVM-IR-Iteration</id><content type="html" xml:base="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html"><![CDATA[<p><strong>STL-style</strong> refers to following the design patterns and conventions established by the <strong>Standard Template Library (STL)</strong>, which is a fundamental part of the C++ standard library.</p>
 
 <h2 id="core-stl-design-patterns">Core STL Design Patterns</h2>
@@ -373,7 +373,235 @@ Assertions are runtime checks that verify these contracts:</p>
 
 <hr />
 
-<h1 id="references">References</h1>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[Status: #review #knowledge Tags: #SAT #testing #softwaredev]]></summary></entry><entry><title type="html">conda vs venv</title><link href="http://localhost:4000/2024/10/20/conda-vs-venv.html" rel="alternate" type="text/html" title="conda vs venv" /><published>2024-10-20T00:00:00-04:00</published><updated>2024-10-20T00:00:00-04:00</updated><id>http://localhost:4000/2024/10/20/conda-vs-venv</id><content type="html" xml:base="http://localhost:4000/2024/10/20/conda-vs-venv.html"><![CDATA[<p>conda needs a environment.yaml file to determine the packages needed</p>
+<h1 id="references">References</h1>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[Status: #review #knowledge Tags: #SAT #testing #softwaredev]]></summary></entry><entry><title type="html">Threads and Concurrency</title><link href="http://localhost:4000/2025/02/24/Threads-and-Concurrency.html" rel="alternate" type="text/html" title="Threads and Concurrency" /><published>2025-02-24T00:00:00-05:00</published><updated>2025-02-24T00:00:00-05:00</updated><id>http://localhost:4000/2025/02/24/Threads%20and%20Concurrency</id><content type="html" xml:base="http://localhost:4000/2025/02/24/Threads-and-Concurrency.html"><![CDATA[<h1 id="comprehensive-analysis-of-threads-and-concurrency-in-modern-computing">Comprehensive Analysis of Threads and Concurrency in Modern Computing</h1>
+
+<p>The study of threads and concurrency represents a cornerstone of modern computing systems, enabling efficient resource utilization and parallel task execution. This report synthesizes key concepts from foundational literature on multithreading architectures, synchronization mechanisms, and implementation patterns. By examining process-thread relationships, synchronization primitives like mutexes and condition variables, and advanced concurrency challenges including deadlock scenarios, we establish a framework for understanding how concurrent programming paradigms achieve performance gains while managing complexity. The analysis extends to kernel/user-level thread models and design patterns that optimize thread utilization, providing critical insights into balancing computational efficiency with robust error handling in multithreaded environments1.</p>
+
+<h2 id="fundamental-concepts-of-execution-contexts">Fundamental Concepts of Execution Contexts</h2>
+
+<h2 id="process-vs-thread-architectures">Process vs. Thread Architectures</h2>
+
+<p>At the core of execution management lies the distinction between processes and threads. Processes operate as independent execution units with dedicated virtual address spaces, program counters, and system resources, while threads represent lightweight execution contexts sharing a common virtual address space within a process. This shared memory model enables threads to access global variables and heap memory without inter-process communication overhead, making them particularly effective for fine-grained parallelism1.</p>
+
+<p>The process control block (PCB) structure demonstrates this dichotomy – while processes require separate PCBs tracking memory maps and resource handles, threads utilize a simplified execution context record focusing primarily on register states and stack pointers. This architectural difference directly impacts memory consumption, with multithreaded applications requiring significantly less memory overhead compared to multiprocess implementations for equivalent workloads1.</p>
+
+<h2 id="motivations-for-multithreaded-programming">Motivations for Multithreaded Programming</h2>
+
+<h2 id="performance-optimization-strategies">Performance Optimization Strategies</h2>
+
+<p>Thread adoption primarily addresses three computational challenges:</p>
+
+<ol>
+  <li>
+    <p><strong>Parallelization Speedup</strong>: Leveraging multiple processors/cores through true parallel execution</p>
+  </li>
+  <li>
+    <p><strong>Specialization Efficiency</strong>: Dedicating threads to specific task types (I/O-bound vs CPU-bound operations)</p>
+  </li>
+  <li>
+    <p><strong>Cache Optimization</strong>: Maintaining hot caches through context preservation within shared memory spaces</p>
+  </li>
+</ol>
+
+<p>Single-CPU multithreading demonstrates surprising utility through intelligent context switching. When thread T1 enters an idle state (awaiting I/O completion or timer events), the scheduler activates thread T2 provided the context switching cost (T_ctx_switch) satisfies T_idle &gt; 2·T_ctx_switch. This hidden parallelism enables better hardware utilization even on single-core systems1.</p>
+
+<h2 id="concurrency-control-mechanisms">Concurrency Control Mechanisms</h2>
+
+<h2 id="mutual-exclusion-mutex-implementation">Mutual Exclusion (Mutex) Implementation</h2>
+
+<p>The mutex primitive enforces exclusive access to critical sections through lock acquisition protocols. Birrell’s proposed syntax encapsulates critical sections within lock-bound blocks, ensuring automatic release upon exit. Modern implementations typically require explicit lock/unlock calls, with strict ordering constraints to prevent race conditions1.</p>
+
+<pre><code class="language-C">pthread_mutex_lock(&amp;mutex);
+// Critical section operations
+pthread_mutex_unlock(&amp;mutex);
+
+</code></pre>
+<p>Mutex fairness guarantees remain implementation-dependent – threads requesting locks during an active critical section may acquire access in arbitrary order once released. This non-determinism necessitates careful design to prevent thread starvation scenarios1.</p>
+
+<h2 id="condition-variable-semantics">Condition Variable Semantics</h2>
+
+<p>Condition variables address the busy-wait problem through event-driven signaling. The wait() operation atomically releases the associated mutex and suspends the thread until a signal/broadcast occurs, then re-acquires the mutex before resuming execution. This dual-state management prevents missed signals while maintaining mutex consistency1.</p>
+
+<pre><code class="language-C">// Consumer thread
+pthread_mutex_lock(&amp;mutex);
+while (!condition_met) {
+    pthread_cond_wait(&amp;cond_var, &amp;mutex);
+}
+// Process condition
+pthread_mutex_unlock(&amp;mutex);
+
+// Producer thread
+pthread_mutex_lock(&amp;mutex);
+condition_met = 1;
+pthread_cond_signal(&amp;cond_var);
+pthread_mutex_unlock(&amp;mutex);
+</code></pre>
+
+<h2 id="synchronization-challenges-and-solutions">Synchronization Challenges and Solutions</h2>
+
+<h2 id="reader-writer-problem-dynamics">Reader-Writer Problem Dynamics</h2>
+
+<p>The reader-writer problem exemplifies synchronization complexity when managing shared resources. Naive mutex implementations serializing all access prove inefficient for read-heavy workloads. Enhanced solutions employ:</p>
+
+<ul>
+  <li>
+    <p>Reader counters with associated mutexes</p>
+  </li>
+  <li>
+    <p>Separate write mutex for exclusive access</p>
+  </li>
+  <li>
+    <p>Priority policies favoring either readers or writers</p>
+  </li>
+</ul>
+
+<p>This separation allows concurrent reads while ensuring write operations maintain data consistency. Implementation typically involves layered mutex locks and condition variables to coordinate access states1.</p>
+
+<h2 id="deadlock-characterization-and-mitigation">Deadlock Characterization and Mitigation</h2>
+
+<p>Deadlock manifests through circular wait dependencies between threads holding conflicting resources. The classical example involves two threads each holding one mutex while requesting the other:</p>
+
+<pre><code class="language-C">// Thread 1
+lock(mutex_A);
+lock(mutex_B);  // Blocks if Thread 2 holds mutex_B
+
+// Thread 2
+lock(mutex_B);
+lock(mutex_A);  // Blocks if Thread 1 holds mutex_A
+</code></pre>
+
+<p>Prevention strategies emphasize:</p>
+
+<ol>
+  <li>
+    <p><strong>Lock Ordering Consistency</strong>: Enforcing global acquisition order for mutexes</p>
+  </li>
+  <li>
+    <p><strong>Timeout Mechanisms</strong>: Implementing try-lock with backoff periods</p>
+  </li>
+  <li>
+    <p><strong>Deadlock Detection</strong>: Maintaining resource allocation graphs for cycle detection</p>
+  </li>
+</ol>
+
+<p>The Ostrich algorithm (ignoring deadlocks) remains controversially viable for systems where deadlock probability is statistically negligible compared to recovery costs1.</p>
+
+<h2 id="thread-implementation-models">Thread Implementation Models</h2>
+
+<h2 id="kernel-level-vs-user-level-threads">Kernel-Level vs User-Level Threads</h2>
+
+<p>Kernel threads enjoy direct OS scheduling support but incur significant context-switching overhead. User-level threads managed by runtime libraries enable lightweight context switches but risk entire process blocking on single-thread syscalls. Hybrid models attempt to balance these tradeoffs:</p>
+
+<p>Characteristic</p>
+
+<p>Kernel Threads</p>
+
+<p>User Threads</p>
+
+<p>Scheduling</p>
+
+<p>OS-managed</p>
+
+<p>Library-managed</p>
+
+<p>Context Switch Cost</p>
+
+<p>High (mode transition)</p>
+
+<p>Low (in-process)</p>
+
+<p>Blocking Behavior</p>
+
+<p>Per-thread</p>
+
+<p>Process-wide</p>
+
+<p>Parallelism</p>
+
+<p>True multi-core</p>
+
+<p>Single-core emulation</p>
+
+<h2 id="thread-mapping-architectures">Thread Mapping Architectures</h2>
+
+<p>Three primary models govern user-kernel thread relationships:</p>
+
+<ol>
+  <li>
+    <p><strong>One-to-One</strong>: Direct user-kernel thread mapping enabling true parallelism but limited scalability</p>
+  </li>
+  <li>
+    <p><strong>Many-to-One</strong>: Multiple user threads on single kernel thread risking complete blockage on syscalls</p>
+  </li>
+  <li>
+    <p><strong>Many-to-Many</strong>: Hybrid pool model balancing parallelism and lightweight context management</p>
+  </li>
+</ol>
+
+<p>Modern systems increasingly adopt the many-to-many model through thread pools and work-stealing algorithms, particularly in NUMA architectures where memory locality significantly impacts performance1.</p>
+
+<h2 id="multithreading-design-patterns">Multithreading Design Patterns</h2>
+
+<h2 id="boss-worker-task-distribution">Boss-Worker Task Distribution</h2>
+
+<p>This pattern separates task generation (boss) from execution (worker pool). A shared queue mediates communication, with workers continuously dequeuing tasks. Key considerations include:</p>
+
+<ul>
+  <li>
+    <p>Queue synchronization using mutexes and condition variables</p>
+  </li>
+  <li>
+    <p>Dynamic worker scaling based on load</p>
+  </li>
+  <li>
+    <p>Work stealing between idle workers</p>
+  </li>
+</ul>
+
+<pre><code class="language-C">struct TaskQueue {
+    pthread_mutex_t lock;
+    pthread_cond_t non_empty;
+    Task* front;
+};
+
+void* worker_thread(void* arg) {
+    while (1) {
+        pthread_mutex_lock(&amp;queue.lock);
+        while (queue.front == NULL) {
+            pthread_cond_wait(&amp;queue.non_empty, &amp;queue.lock);
+        }
+        Task* task = dequeue_task();
+        pthread_mutex_unlock(&amp;queue.lock);
+        execute_task(task);
+    }
+}
+</code></pre>
+
+<h2 id="pipeline-processing-model">Pipeline Processing Model</h2>
+
+<p>Breaking tasks into sequential stages handled by dedicated thread pools enables assembly-line parallelism. Each pipeline stage maintains its own synchronization queue, with throughput limited by the slowest stage. Effective buffer sizing between stages prevents producer-consumer bottlenecks1.</p>
+
+<h2 id="layered-execution-strategy">Layered Execution Strategy</h2>
+
+<p>Similar to network protocol stacks, layered threading isolates functional components into hierarchical groups. Requests propagate vertically through layers, with each layer potentially employing its own concurrency model. This proves particularly effective in server architectures handling authentication, processing, and response stages as distinct layers1.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>Modern concurrent programming demands meticulous attention to synchronization primitives, execution models, and architectural patterns. While mutexes and condition variables provide foundational coordination mechanisms, their effective use requires deep understanding of deadlock scenarios and spurious wakeup mitigation. The choice between kernel and user-level threading models significantly impacts both performance and program complexity, necessitating architecture-specific optimizations.</p>
+
+<p>Emerging hardware trends like heterogeneous computing and non-uniform memory access architectures will likely drive evolution in threading paradigms. Future research directions should investigate machine learning-assisted deadlock detection and context-aware scheduling algorithms. Practitioners must balance theoretical synchronization principles with empirical performance profiling to achieve optimal concurrency implementations1.</p>
+
+<h3 id="citations">Citations:</h3>
+
+<ol>
+  <li><a href="https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/31164939/2d2eb09b-1951-4725-9344-c964a1565eb8/P2L2_-_Threads_and_Concurrency.pdf">https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/31164939/2d2eb09b-1951-4725-9344-c964a1565eb8/P2L2_-_Threads_and_Concurrency.pdf</a></li>
+</ol>
+
+<p>An Introduction to Programming with Threads by  Andrew D. Birrell</p>
+
+<hr />
+
+<p>Answer from Perplexity: <a href="pplx.ai/share">pplx.ai/share</a></p>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[Comprehensive Analysis of Threads and Concurrency in Modern Computing]]></summary></entry><entry><title type="html">conda vs venv</title><link href="http://localhost:4000/2024/10/20/conda-vs-venv.html" rel="alternate" type="text/html" title="conda vs venv" /><published>2024-10-20T00:00:00-04:00</published><updated>2024-10-20T00:00:00-04:00</updated><id>http://localhost:4000/2024/10/20/conda-vs-venv</id><content type="html" xml:base="http://localhost:4000/2024/10/20/conda-vs-venv.html"><![CDATA[<p>conda needs a environment.yaml file to determine the packages needed</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">-m</span> venv .venv
 <span class="nb">source </span>myvenv/bin/activate

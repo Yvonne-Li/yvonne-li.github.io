@@ -2,7 +2,7 @@
 layout: post
 title: "Software Testing"
 date: 2025-05-22
-custom_excerpt: "CS6340 SAT - Introduction to Software Testing"
+custom_excerpt: "Introduction"
 ---
 
 Status: #review  #knowledge \

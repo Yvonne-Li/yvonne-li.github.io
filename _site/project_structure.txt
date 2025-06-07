@@ -1,0 +1,68 @@
+.
+├── 404.html
+├── Gemfile
+├── Gemfile.lock
+├── README.md
+├── _config.yml
+├── _layouts
+│   ├── _not_use_cv.html
+│   ├── blog.html
+│   ├── default.html
+│   └── post.html
+├── _posts
+│   ├── 2024-10-20-conda-vs-venv.md
+│   ├── 2025-05-22-Introduction to Software Testing.md
+│   └── 2025-06-07-LLVM-IR-Iteration.md
+├── _site
+│   ├── 2024
+│   │   └── 10
+│   │       └── 20
+│   │           └── conda-vs-venv.html
+│   ├── 2025
+│   │   ├── 05
+│   │   │   └── 22
+│   │   │       └── Introduction-to-Software-Testing.html
+│   │   └── 06
+│   │       └── 07
+│   │           └── LLVM-IR-Iteration.html
+│   ├── 404.html
+│   ├── README.md
+│   ├── about
+│   │   └── index.html
+│   ├── assets
+│   │   ├── css
+│   │   │   └── main.css
+│   │   ├── images
+│   │   │   ├── posts
+│   │   │   │   ├── 2025-05-22-01.png
+│   │   │   │   ├── 2025-05-22-02.png
+│   │   │   │   ├── 2025-05-22-03.png
+│   │   │   │   └── 2025-05-22-04.png
+│   │   │   └── yli.png
+│   │   ├── js
+│   │   │   └── puns.js
+│   │   ├── main.css
+│   │   └── minima-social-icons.svg
+│   ├── cleanup.sh
+│   ├── feed.xml
+│   ├── index.html
+│   └── site.webmanifest
+├── about.markdown
+├── assets
+│   ├── css
+│   │   └── main.css
+│   ├── images
+│   │   ├── posts
+│   │   │   ├── 2025-05-22-01.png
+│   │   │   ├── 2025-05-22-02.png
+│   │   │   ├── 2025-05-22-03.png
+│   │   │   └── 2025-05-22-04.png
+│   │   └── yli.png
+│   └── js
+│       └── puns.js
+├── cleanup.sh
+├── index.markdown
+├── project_structure.txt
+└── site.webmanifest
+
+23 directories, 43 files

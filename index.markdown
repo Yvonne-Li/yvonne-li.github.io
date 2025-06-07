@@ -10,7 +10,7 @@ show_title: false
 
 ## Welcome Travellers!
 
-Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on\
+Hi, I'm Yvonne Li. Here, you can check out what I'm currently working on
 <h4 class="joke-header">Tell me a joke about something:</h4>
 
 <div class="search-section">
@@ -39,7 +39,7 @@ class="response-container"
 ## Latest Posts
 
 <ul class="posts">
-{% for post in site.posts %}
+{% for post in site.posts limit:3 %}
 <li class="post-item">
 <div class="post-meta">
 <span>{{ post.date | date_to_string }}</span>

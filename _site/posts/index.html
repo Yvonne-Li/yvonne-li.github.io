@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
+    <meta name="description" content="Hello Travellers!
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="theme-color" content="#ffffff">
     
@@ -12,7 +13,7 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
     
-    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <title>Posts - Yvonne Li</title>
     
     <!-- Preload critical assets -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -30,28 +31,30 @@
     
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
-    <meta property="og:description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
-    <meta property="og:image" content="{{ site.url }}/assets/images/yli.png">
-    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:title" content="Posts - Yvonne Li">
+    <meta property="og:description" content="Hello Travellers!
+">
+    <meta property="og:image" content="http://localhost:4000/assets/images/yli.png">
+    <meta property="og:url" content="http://localhost:4000/posts/">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}">
-    <meta name="twitter:description" content="{{ page.description | default: site.description | strip_html | truncate: 160 }}">
-    <meta name="twitter:image" content="{{ site.url }}/assets/images/yli.png">
+    <meta name="twitter:title" content="Posts - Yvonne Li">
+    <meta name="twitter:description" content="Hello Travellers!
+">
+    <meta name="twitter:image" content="http://localhost:4000/assets/images/yli.png">
 
     <!-- JSON-LD for better SEO -->
     <script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "Person",
-        "name": "{{ site.author.name }}",
-        "url": "{{ site.url }}",
-        "image": "{{ site.url }}/assets/images/yli.png",
+        "name": "Yvonne Li",
+        "url": "http://localhost:4000",
+        "image": "http://localhost:4000/assets/images/yli.png",
         "sameAs": [
-            "{{ site.social.linkedin }}",
-            "{{ site.social.github }}"
+            "https://www.linkedin.com/in/yvonneli-yli/",
+            "https://github.com/yvonne-li"
         ],
         "jobTitle": "Data Analytics Professional"
     }
@@ -73,9 +76,9 @@
         >
         <nav aria-label="Main navigation">
             <ul>
-                <li><a href="/" {% if page.url == '/' %}class="active" aria-current="page"{% endif %}>Home</a></li>
-                <li><a href="/about" {% if page.url == '/about/' %}class="active" aria-current="page"{% endif %}>About</a></li>
-                <li><a href="/posts" {% if page.url == '/posts/' %}class="active" aria-current="page"{% endif %}>Posts</a></li> 
+                <li><a href="/" >Home</a></li>
+                <li><a href="/about" >About</a></li>
+                <li><a href="/posts" class="active" aria-current="page">Posts</a></li> 
                 <li>
                     <a 
                         href="mailto:yvonneli.dev@gmail.com" 
@@ -85,7 +88,7 @@
                 </li>
                 <li>
                     <a 
-                        href="{{ site.social.github }}" 
+                        href="https://github.com/yvonne-li" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         aria-label="Visit Yvonne Li's GitHub profile"
@@ -93,7 +96,7 @@
                 </li>
                 <li>
                     <a 
-                        href="{{ site.social.linkedin }}" 
+                        href="https://www.linkedin.com/in/yvonneli-yli/" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         aria-label="Visit Yvonne Li's LinkedIn profile"
@@ -104,22 +107,34 @@
     </header>
 
     <main id="main" class="container" tabindex="-1">
-        {{ content }}
+        <ul class="posts">
+    
+    <li>
+        <span>07 Jun 2025</span> » 
+        <a href="/2025/06/07/LLVM-IR-Iteration.html" title="LLVM IR Iteration">LLVM IR Iteration</a>
+        
+            <p>How it works</p>
+        
+    </li>
+    
+    <li>
+        <span>22 May 2025</span> » 
+        <a href="/2025/05/22/Introduction-to-Software-Testing.html" title="Software Testing">Software Testing</a>
+        
+            <p>Introduction</p>
+        
+    </li>
+    
+</ul>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; {{ 'now' | date: "%Y" }} {{ site.author.name }}. All rights reserved.</p>
+        <p>&copy; 2025 Yvonne Li. All rights reserved.</p>
     </footer>
 
     <!-- Chat script -->
     <script src="/assets/js/puns.js" defer></script>
 
-    {% if jekyll.environment == "production" %}
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/service-worker.js');
-        }
-    </script>
-    {% endif %}
+    
 </body>
 </html>

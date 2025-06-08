@@ -37,7 +37,7 @@ custom_excerpt: "how Latam looks like"
   <figcaption>Mars-like landscape @ Valle de la Luna</figcaption>
 </figure>
 <figure class="post-image">
-  <img src="{{ site.baseurl }}/assets/images/posts/2024-12-15-10.jpg" alt="Description">
+  <img src="{{ site.baseurl }}/assets/images/posts/2024-12-15-10.JPG" alt="Description">
   <figcaption>Landscape at El Tatio geysers</figcaption>
 </figure>
 

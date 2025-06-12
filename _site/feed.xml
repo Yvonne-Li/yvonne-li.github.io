@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-07T16:33:48-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-08T00:08:08-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
 </subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">LLVM IR Iteration</title><link href="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html" rel="alternate" type="text/html" title="LLVM IR Iteration" /><published>2025-06-07T00:00:00-04:00</published><updated>2025-06-07T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/07/LLVM-IR-Iteration</id><content type="html" xml:base="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html"><![CDATA[<p><strong>STL-style</strong> refers to following the design patterns and conventions established by the <strong>Standard Template Library (STL)</strong>, which is a fundamental part of the C++ standard library.</p>
 
 <h2 id="core-stl-design-patterns">Core STL Design Patterns</h2>
@@ -634,7 +634,7 @@ void* worker_thread(void* arg) {
   <figcaption>Mars-like landscape @ Valle de la Luna</figcaption>
 </figure>
 <figure class="post-image">
-  <img src="/assets/images/posts/2024-12-15-10.jpg" alt="Description" />
+  <img src="/assets/images/posts/2024-12-15-10.JPG" alt="Description" />
   <figcaption>Landscape at El Tatio geysers</figcaption>
 </figure>
 

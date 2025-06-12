@@ -19,8 +19,19 @@ vim ~/.zshrc
 ```
 add following to the end of ~/.bash_profile
 ```bash
-# Terminal logging with current directory name
-if [[ -z "$SCRIPT" ]]; then
+# Toggle function for logging
+function toggle_logging() {
+    if [[ -z "$DISABLE_LOGGING" ]]; then
+        export DISABLE_LOGGING=1
+        echo "🔴 Terminal logging disabled for new sessions"
+    else
+        unset DISABLE_LOGGING
+        echo "🟢 Terminal logging enabled for new sessions"
+    fi
+}
+
+# Terminal logging with current directory name (with toggle check)
+if [[ -z "$SCRIPT" ]] && [[ -z "$DISABLE_LOGGING" ]]; then
     export SCRIPT=1
     # Get current directory path, replace / with - for filename
     DIR_PATH=$(pwd | sed 's|^/Users/[^/]*/|~/|' | tr '/' '-')
@@ -41,8 +52,19 @@ code ~/.zshrc
 
 add following to the end of ~/.bash_profile
 ```bash
-# Terminal logging with current directory name
-if [[ -z "$SCRIPT" ]]; then
+# Toggle function for logging
+function toggle_logging() {
+    if [[ -z "$DISABLE_LOGGING" ]]; then
+        export DISABLE_LOGGING=1
+        echo "🔴 Terminal logging disabled for new sessions"
+    else
+        unset DISABLE_LOGGING
+        echo "🟢 Terminal logging enabled for new sessions"
+    fi
+}
+
+# Terminal logging with current directory name (with toggle check)
+if [[ -z "$SCRIPT" ]] && [[ -z "$DISABLE_LOGGING" ]]; then
     export SCRIPT=1
     # Get current directory path, replace / with - for filename
     DIR_PATH=$(pwd | sed 's|^/Users/[^/]*/|~/|' | tr '/' '-')

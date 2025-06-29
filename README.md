@@ -45,5 +45,10 @@ tree -I 'node_modules|.git|dist|build' > project_structure.txt
 
 push to repo
 ```bash
+git stash
+git pull
+git stash pop
+git status
+git commit -m ""
 git push origin master
 ```

@@ -1,20 +1,28 @@
 source "https://rubygems.org"
 
-# Use the GitHub Pages gem which includes Jekyll and other dependencies
-gem "github-pages", group: :jekyll_plugins
+# Jekyll
+gem "jekyll", "~> 4.3.0"
 
-# Only add gems that are whitelisted by GitHub Pages
+# Security updates
+gem "nokogiri", "~> 1.18.9"
+gem "rexml", "~> 3.4.2"
+
+# Plugins
 group :jekyll_plugins do
-  gem "jekyll-feed"
+  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
 end
 
-# Windows and JRuby platforms
+# Required for Ruby 3+
+gem "webrick", "~> 1.7"
+
+# Windows and JRuby
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"
   gem "tzinfo-data"
 end
 
-# Performance-booster for watching directories on Windows
-gem "wdm", "~> 0.1", :platforms => [:mingw, :x64_mingw, :mswin]
-
-gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
+platforms :mingw, :x64_mingw, :mswin do
+  gem "wdm", "~> 0.1.1"
+end

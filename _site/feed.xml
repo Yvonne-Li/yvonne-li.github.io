@@ -1,5 +1,73 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-08T00:08:08-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
-</subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">LLVM IR Iteration</title><link href="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html" rel="alternate" type="text/html" title="LLVM IR Iteration" /><published>2025-06-07T00:00:00-04:00</published><updated>2025-06-07T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/07/LLVM-IR-Iteration</id><content type="html" xml:base="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html"><![CDATA[<p><strong>STL-style</strong> refers to following the design patterns and conventions established by the <strong>Standard Template Library (STL)</strong>, which is a fundamental part of the C++ standard library.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en_US"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en_US" /><updated>2025-06-11T20:37:51-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Yvonne Li</title><subtitle>Hello Travellers!
+</subtitle><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><entry><title type="html">Bash for logging terminal script</title><link href="http://localhost:4000/2025/06/11/Bash-for-logging-terminal.html" rel="alternate" type="text/html" title="Bash for logging terminal script" /><published>2025-06-11T00:00:00-04:00</published><updated>2025-06-11T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/11/Bash-for-logging-terminal</id><content type="html" xml:base="http://localhost:4000/2025/06/11/Bash-for-logging-terminal.html"><![CDATA[<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Open your .bash_profile in VSCode Terminal</span>
+code ~/.bash_profile
+
+<span class="c"># Use nano (built-in terminal editor)</span>
+nano ~/.zshrc
+
+<span class="c"># Or open with default text editor</span>
+open ~/.zshrc
+
+<span class="c"># Or use vim if you're comfortable with it</span>
+vim ~/.zshrc
+</code></pre></div></div>
+<p>add following to the end of ~/.bash_profile</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Toggle function for logging</span>
+<span class="k">function </span>toggle_logging<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$DISABLE_LOGGING</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">export </span><span class="nv">DISABLE_LOGGING</span><span class="o">=</span>1
+        <span class="nb">echo</span> <span class="s2">"🔴 Terminal logging disabled for new sessions"</span>
+    <span class="k">else
+        </span><span class="nb">unset </span>DISABLE_LOGGING
+        <span class="nb">echo</span> <span class="s2">"🟢 Terminal logging enabled for new sessions"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># Terminal logging with current directory name (with toggle check)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$SCRIPT</span><span class="s2">"</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$DISABLE_LOGGING</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">export </span><span class="nv">SCRIPT</span><span class="o">=</span>1
+    <span class="c"># Get current directory path, replace / with - for filename</span>
+    <span class="nv">DIR_PATH</span><span class="o">=</span><span class="si">$(</span><span class="nb">pwd</span> | <span class="nb">sed</span> <span class="s1">'s|^/Users/[^/]*/|~/|'</span> | <span class="nb">tr</span> <span class="s1">'/'</span> <span class="s1">'-'</span><span class="si">)</span>
+    <span class="c"># Remove leading dash if any</span>
+    <span class="nv">DIR_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">DIR_PATH</span><span class="p">#-</span><span class="k">}</span>
+    
+    <span class="nb">mkdir</span> <span class="nt">-p</span> ~/terminal_logs
+    <span class="nv">LOG_FILE</span><span class="o">=</span>~/terminal_logs/<span class="k">${</span><span class="nv">TERM_PROGRAM</span><span class="k">}</span>_<span class="k">${</span><span class="nv">DIR_PATH</span><span class="k">}</span>_<span class="si">$(</span><span class="nb">date</span> +%Y%m%d_%H%M%S<span class="si">)</span>.log
+    <span class="nb">echo</span> <span class="s2">"📝 Terminal session being logged to: </span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
+    script <span class="nt">-q</span> <span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
+<span class="k">fi</span>
+</code></pre></div></div>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Open your .zshrc</span>
+code ~/.zshrc
+</code></pre></div></div>
+
+<p>add following to the end of ~/.bash_profile</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Toggle function for logging</span>
+<span class="k">function </span>toggle_logging<span class="o">()</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$DISABLE_LOGGING</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+        </span><span class="nb">export </span><span class="nv">DISABLE_LOGGING</span><span class="o">=</span>1
+        <span class="nb">echo</span> <span class="s2">"🔴 Terminal logging disabled for new sessions"</span>
+    <span class="k">else
+        </span><span class="nb">unset </span>DISABLE_LOGGING
+        <span class="nb">echo</span> <span class="s2">"🟢 Terminal logging enabled for new sessions"</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c"># Terminal logging with current directory name (with toggle check)</span>
+<span class="k">if</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$SCRIPT</span><span class="s2">"</span> <span class="o">]]</span> <span class="o">&amp;&amp;</span> <span class="o">[[</span> <span class="nt">-z</span> <span class="s2">"</span><span class="nv">$DISABLE_LOGGING</span><span class="s2">"</span> <span class="o">]]</span><span class="p">;</span> <span class="k">then
+    </span><span class="nb">export </span><span class="nv">SCRIPT</span><span class="o">=</span>1
+    <span class="c"># Get current directory path, replace / with - for filename</span>
+    <span class="nv">DIR_PATH</span><span class="o">=</span><span class="si">$(</span><span class="nb">pwd</span> | <span class="nb">sed</span> <span class="s1">'s|^/Users/[^/]*/|~/|'</span> | <span class="nb">tr</span> <span class="s1">'/'</span> <span class="s1">'-'</span><span class="si">)</span>
+    <span class="c"># Remove leading dash if any</span>
+    <span class="nv">DIR_PATH</span><span class="o">=</span><span class="k">${</span><span class="nv">DIR_PATH</span><span class="p">#-</span><span class="k">}</span>
+    
+    <span class="nb">mkdir</span> <span class="nt">-p</span> ~/terminal_logs
+    <span class="nv">LOG_FILE</span><span class="o">=</span>~/terminal_logs/<span class="k">${</span><span class="nv">TERM_PROGRAM</span><span class="k">}</span>_<span class="k">${</span><span class="nv">DIR_PATH</span><span class="k">}</span>_<span class="si">$(</span><span class="nb">date</span> +%Y%m%d_%H%M%S<span class="si">)</span>.log
+    <span class="nb">echo</span> <span class="s2">"📝 Terminal session being logged to: </span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
+    script <span class="nt">-q</span> <span class="s2">"</span><span class="nv">$LOG_FILE</span><span class="s2">"</span>
+<span class="k">fi</span>
+</code></pre></div></div>]]></content><author><name>Yvonne Li</name><email>yvonneli.dev@gmail.com</email></author><summary type="html"><![CDATA[```bash Open your .bash_profile in VSCode Terminal code ~/.bash_profile]]></summary></entry><entry><title type="html">LLVM IR Iteration</title><link href="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html" rel="alternate" type="text/html" title="LLVM IR Iteration" /><published>2025-06-07T00:00:00-04:00</published><updated>2025-06-07T00:00:00-04:00</updated><id>http://localhost:4000/2025/06/07/LLVM-IR-Iteration</id><content type="html" xml:base="http://localhost:4000/2025/06/07/LLVM-IR-Iteration.html"><![CDATA[<p><strong>STL-style</strong> refers to following the design patterns and conventions established by the <strong>Standard Template Library (STL)</strong>, which is a fundamental part of the C++ standard library.</p>
 
 <h2 id="core-stl-design-patterns">Core STL Design Patterns</h2>
 

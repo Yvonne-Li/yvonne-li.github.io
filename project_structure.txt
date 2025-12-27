@@ -11,14 +11,19 @@
 │   └── post.html
 ├── _posts
 │   ├── 2024-10-20-conda-vs-venv.md
+│   ├── 2024-12-15-Trip-in-Latam.md
 │   ├── 2025-02-24-Threads and Concurrency.md
 │   ├── 2025-05-22-Introduction to Software Testing.md
-│   └── 2025-06-07-LLVM-IR-Iteration.md
+│   ├── 2025-06-07-LLVM-IR-Iteration.md
+│   └── 2025-06-11-Bash-for-logging-terminal.md
 ├── _site
 │   ├── 2024
-│   │   └── 10
-│   │       └── 20
-│   │           └── conda-vs-venv.html
+│   │   ├── 10
+│   │   │   └── 20
+│   │   │       └── conda-vs-venv.html
+│   │   └── 12
+│   │       └── 15
+│   │           └── Trip-in-Latam.html
 │   ├── 2025
 │   │   ├── 02
 │   │   │   └── 24
@@ -27,8 +32,10 @@
 │   │   │   └── 22
 │   │   │       └── Introduction-to-Software-Testing.html
 │   │   └── 06
-│   │       └── 07
-│   │           └── LLVM-IR-Iteration.html
+│   │       ├── 07
+│   │       │   └── LLVM-IR-Iteration.html
+│   │       └── 11
+│   │           └── Bash-for-logging-terminal.html
 │   ├── 404.html
 │   ├── Gemfile
 │   ├── about
@@ -39,6 +46,15 @@
 │   │   │   └── style.css
 │   │   ├── images
 │   │   │   ├── posts
+│   │   │   │   ├── 2024-12-15-01.jpeg
+│   │   │   │   ├── 2024-12-15-02.jpeg
+│   │   │   │   ├── 2024-12-15-04.jpeg
+│   │   │   │   ├── 2024-12-15-05.jpeg
+│   │   │   │   ├── 2024-12-15-06.jpeg
+│   │   │   │   ├── 2024-12-15-07.jpeg
+│   │   │   │   ├── 2024-12-15-08.jpeg
+│   │   │   │   ├── 2024-12-15-09.jpeg
+│   │   │   │   ├── 2024-12-15-10.JPG
 │   │   │   │   ├── 2025-05-22-01.png
 │   │   │   │   ├── 2025-05-22-02.png
 │   │   │   │   ├── 2025-05-22-03.png
@@ -60,6 +76,15 @@
 │   │   └── main.css
 │   ├── images
 │   │   ├── posts
+│   │   │   ├── 2024-12-15-01.jpeg
+│   │   │   ├── 2024-12-15-02.jpeg
+│   │   │   ├── 2024-12-15-04.jpeg
+│   │   │   ├── 2024-12-15-05.jpeg
+│   │   │   ├── 2024-12-15-06.jpeg
+│   │   │   ├── 2024-12-15-07.jpeg
+│   │   │   ├── 2024-12-15-08.jpeg
+│   │   │   ├── 2024-12-15-09.jpeg
+│   │   │   ├── 2024-12-15-10.JPG
 │   │   │   ├── 2025-05-22-01.png
 │   │   │   ├── 2025-05-22-02.png
 │   │   │   ├── 2025-05-22-03.png
@@ -74,4 +99,4 @@
 ├── project_structure.txt
 └── site.webmanifest
 
-26 directories, 49 files
+29 directories, 71 files

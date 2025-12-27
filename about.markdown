@@ -11,9 +11,9 @@ permalink: /about/
         I'm Yvonne, 📍 Toronto, ON, love RedNote, tennis, hiking, travelling,& have a cat called Hugo.
             <li>📊 working with loyalty and marketing data at bank </li>
             <li>📺 watching: Adolescence </li>
-            <li>📖 reading: The Beginning of Infinity∞, Approaching (Almost) Any Machine Learning Problem </li>
+            <li>📖 reading: the hundred-page machine learning book, the letters of virginia woolf </li>
             <li>👾 playing: Elden Ring (still stuck in Scadutree Avatar and Malenia Blade of Miquella) </li>
-            <li>👩‍💻 building/learning: C++, GenAI, web design, 🥁 drum! </li>
+            <li>👩‍💻 building/learning: computer network, cloud computing, LLM, NodeJS, wood crafting, 🥁 drum! </li>
         </ul>
     </div>
     <div class="about-image">

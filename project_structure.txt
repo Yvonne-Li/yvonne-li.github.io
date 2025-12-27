@@ -15,7 +15,9 @@
 │   ├── 2025-02-24-Threads and Concurrency.md
 │   ├── 2025-05-22-Introduction to Software Testing.md
 │   ├── 2025-06-07-LLVM-IR-Iteration.md
-│   └── 2025-06-11-Bash-for-logging-terminal.md
+│   ├── 2025-06-11-Bash-for-logging-terminal.md
+│   ├── 2025-06-30-Useful-Bits.md
+│   └── Book-list.md
 ├── _site
 │   ├── 2024
 │   │   ├── 10
@@ -34,16 +36,16 @@
 │   │   └── 06
 │   │       ├── 07
 │   │       │   └── LLVM-IR-Iteration.html
-│   │       └── 11
-│   │           └── Bash-for-logging-terminal.html
+│   │       ├── 11
+│   │       │   └── Bash-for-logging-terminal.html
+│   │       └── 30
+│   │           └── Useful-Bits.html
 │   ├── 404.html
-│   ├── Gemfile
 │   ├── about
 │   │   └── index.html
 │   ├── assets
 │   │   ├── css
-│   │   │   ├── main.css
-│   │   │   └── style.css
+│   │   │   └── main.css
 │   │   ├── images
 │   │   │   ├── posts
 │   │   │   │   ├── 2024-12-15-01.jpeg
@@ -69,7 +71,9 @@
 │   ├── posts
 │   │   └── index.html
 │   ├── project_structure.txt
-│   └── site.webmanifest
+│   ├── robots.txt
+│   ├── site.webmanifest
+│   └── sitemap.xml
 ├── about.markdown
 ├── assets
 │   ├── css
@@ -99,4 +103,4 @@
 ├── project_structure.txt
 └── site.webmanifest
 
-29 directories, 71 files
+30 directories, 74 files

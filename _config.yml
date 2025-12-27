@@ -21,6 +21,9 @@ baseurl: ""
 lang: en_US
 timezone: America/Toronto
 
+markdown: kramdown
+kramdown:
+  input: GFM
 # Exclude from processing
 exclude:
   - vendor/
